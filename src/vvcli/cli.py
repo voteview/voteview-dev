@@ -19,6 +19,26 @@ import click
 from vvcli import app
 
 
-@click.command()
-def cli(**kwargs):
-    app.main(**kwargs)
+rollcall = click.Command("rollcall")
+member = click.Command("member")
+vote = click.Command("vote")
+person = click.Command("person")
+objects = [rollcall, member, vote, person]
+
+
+def group(*args, commands, **kwargs):
+    return click.Group(*args, commands={c.name: c for c in commands}, **kwargs)
+
+
+find = group("find", commands=objects)
+update = group("update", commands=objects)
+insert = group("insert", commands=objects)
+delete = group("delete", commands=objects)
+
+
+cli = group(commands=[find, update, insert, delete])
+
+
+@cli.resultcallback()
+def callback(*a, **kw):
+    print(a, kw)
