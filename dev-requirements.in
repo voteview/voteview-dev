@@ -19,3 +19,4 @@ py-find-injection
 twine
 docshtest
 pytest-cov
+tox-docker
