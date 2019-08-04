@@ -16,23 +16,23 @@ import vvcli.utils
 class MemberNokkenPoole:
     """A member's Nokken-Poole score."""
 
-    dim1: float = vvcli.utils.UNSET
-    dim2: float = vvcli.utils.UNSET
-    number_of_votes: int = vvcli.utils.UNSET
+    dim1: float
+    dim2: float
+    number_of_votes: int
 
 
 @vvcli.utils.lock
 class MemberNominate:
     """A member's Nominate statistics."""
 
-    number_of_votes: int = vvcli.utils.UNSET
-    number_of_errors: int = vvcli.utils.UNSET
-    dim1: float = vvcli.utils.UNSET
-    dim2: float = vvcli.utils.UNSET
-    total_number_of_votes: int = vvcli.utils.UNSET
-    geo_mean_probability: float = vvcli.utils.UNSET
-    conditional: int = vvcli.utils.UNSET
-    log_likelihood: float = vvcli.utils.UNSET
+    number_of_votes: int
+    number_of_errors: int
+    dim1: float
+    dim2: float
+    total_number_of_votes: int
+    geo_mean_probability: float
+    conditional: int
+    log_likelihood: float
 
 
 @vvcli.utils.lock
@@ -43,12 +43,12 @@ class Person:
 
     """
 
-    born: t.Optional[int] = vvcli.utils.UNSET
-    biography: t.Optional[str] = vvcli.utils.UNSET
-    id: str = vvcli.utils.UNSET
-    bioguide_id: t.Optional[str] = vvcli.utils.UNSET
-    died: t.Optional[int] = vvcli.utils.UNSET
-    bioname: str = vvcli.utils.UNSET
+    born: t.Optional[int]
+    biography: t.Optional[str]
+    id: str
+    bioguide_id: t.Optional[str]
+    died: t.Optional[int]
+    bioname: str
 
 
 @vvcli.utils.lock
@@ -60,54 +60,54 @@ class Member:
 
     """
 
-    person: Person = vvcli.utils.UNSET
-    state_abbrev: str = vvcli.utils.UNSET
-    nominate: MemberNominate = vvcli.utils.UNSET
-    icpsr: int = vvcli.utils.UNSET
-    last_updated: datetime.dateti = vvcli.utils.UNSETme
-    id: str = vvcli.utils.UNSET
-    born: int = vvcli.utils.UNSET
-    died: t.Optional[int] = vvcli.utils.UNSET
-    district_code: int = vvcli.utils.UNSET
-    party_code: int = vvcli.utils.UNSET
-    nokken_poole: MemberNokkenPoole = vvcli.utils.UNSET
-    chamber: str = vvcli.utils.UNSET
+    person: Person
+    state_abbrev: str
+    nominate: MemberNominate
+    icpsr: int
+    last_updated: datetime.datetime
+    id: str
+    born: int
+    died: t.Optional[int]
+    district_code: int
+    party_code: int
+    nokken_poole: MemberNokkenPoole
+    chamber: str
 
 
 @vvcli.utils.lock
 class RollcallNominate:
     """Nominate statistics of a rollcall."""
 
-    conditional: int = vvcli.utils.UNSET
-    spread: t.List[float] = vvcli.utils.UNSET
-    classified: float = vvcli.utils.UNSET
-    log_likelihood: float = vvcli.utils.UNSET
-    geo_mean_probability: float = vvcli.utils.UNSET
-    pre: float = vvcli.utils.UNSET
-    mid: t.List[float] = vvcli.utils.UNSET
+    conditional: int
+    spread: t.List[float]
+    classified: float
+    log_likelihood: float
+    geo_mean_probability: float
+    pre: float
+    mid: t.List[float]
 
 
 @vvcli.utils.lock
 class Rollcall:
     """A rollcall."""
 
-    last_updated: datetime.datetime = vvcli.utils.UNSET
-    vote_question: str = vvcli.utils.UNSET
-    legis_num: str = vvcli.utils.UNSET
-    vote_desc: str = vvcli.utils.UNSET
-    nominate: RollcallNominate = vvcli.utils.UNSET
-    congress: int = vvcli.utils.UNSET
-    id: str = vvcli.utils.UNSET
-    date: datetime.date = vvcli.utils.UNSET
-    vote_type: str = vvcli.utils.UNSET
-    _id: str = vvcli.utils.UNSET
-    session: int = vvcli.utils.UNSET
-    rollnumber: int = vvcli.utils.UNSET
-    bill_number: str = vvcli.utils.UNSET
-    vote_result: str = vvcli.utils.UNSET
-    percent_support: float = vvcli.utils.UNSET
-    chamber: str = vvcli.utils.UNSET
-    clerk_rollnumber: int = vvcli.utils.UNSET
+    last_updated: datetime.datetime
+    vote_question: str
+    legis_num: str
+    vote_desc: str
+    nominate: RollcallNominate
+    congress: int
+    id: str
+    date: datetime.date
+    vote_type: str
+    _id: str
+    session: int
+    rollnumber: int
+    bill_number: str
+    vote_result: str
+    percent_support: float
+    chamber: str
+    clerk_rollnumber: int
 
 
 def connect(db_name: str) -> pymongo.database.Database:
