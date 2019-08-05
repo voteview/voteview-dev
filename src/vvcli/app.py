@@ -6,53 +6,51 @@ import datetime
 import typing as t
 
 import attr
+import mongoengine
 import pymongo
+from mongoengine import fields
 
 import vvcli.exceptions
 import vvcli.utils
 
 
-@vvcli.utils.lock
-class MemberNokkenPoole:
+class MemberNokkenPoole(mongoengine.EmbeddedDocument):
     """A member's Nokken-Poole score."""
 
-    dim1: float
-    dim2: float
-    number_of_votes: int
+    dim1: float = fields.FloatField()
+    dim2: float = fields.FloatField()
+    number_of_votes: int = fields.IntField()
 
 
-@vvcli.utils.lock
-class MemberNominate:
+class MemberNominate(mongoengine.EmbeddedDocument):
     """A member's Nominate statistics."""
 
-    number_of_votes: int
-    number_of_errors: int
-    dim1: float
-    dim2: float
-    total_number_of_votes: int
-    geo_mean_probability: float
-    conditional: int
-    log_likelihood: float
+    number_of_votes: int = fields.IntField()
+    number_of_errors: int = fields.IntField()
+    dim1: float = fields.FloatField()
+    dim2: float = fields.FloatField()
+    total_number_of_votes: int = fields.IntField()
+    geo_mean_probability: float = fields.FloatField()
+    conditional: int = fields.IntField()
+    log_likelihood: float = fields.IntField()
 
 
-@vvcli.utils.lock
-class Person:
+class Person(mongoengine.EmbeddedDocument):
     """A human person.
 
     A person with multiple ICPSR numbers has multiple associated `Member`s.
 
     """
 
-    born: t.Optional[int]
-    biography: t.Optional[str]
-    id: str
-    bioguide_id: t.Optional[str]
-    died: t.Optional[int]
-    bioname: str
+    born: t.Optional[int] = fields.IntField()
+    biography: t.Optional[str] = fields.StringField()
+    id: str = fields.StringField()
+    bioguide_id: t.Optional[str] = fields.StringField()
+    died: t.Optional[int] = fields.IntField()
+    bioname: str = fields.StringField()
 
 
-@vvcli.utils.lock
-class Member:
+class Member(mongoengine.EmbeddedDocument):
     """An ICSPR-member.
 
     Some persons get more than one ICPSR number and nominate score. The `Member`
@@ -60,54 +58,30 @@ class Member:
 
     """
 
-    person: Person
-    state_abbrev: str
-    nominate: MemberNominate
-    icpsr: int
-    last_updated: datetime.datetime
-    id: str
-    born: int
-    died: t.Optional[int]
-    district_code: int
-    party_code: int
-    nokken_poole: MemberNokkenPoole
-    chamber: str
+    person_id: str = fields.StringField()
+    state_abbrev: str = fields.StringField()
+    nominate: MemberNominate = fields.EmbeddedDocumentField(MemberNominate)
+    icpsr: int = fields.IntField()
+    last_updated: datetime.datetime = fields.DateTimeField()
+    id: str = fields.StringField()
+    born: int = fields.IntField()
+    died: t.Optional[int] = fields.IntField()
+    district_code: int = fields.IntField()
+    party_code: int = fields.IntField()
+    nokken_poole: MemberNokkenPoole = fields.EmbeddedDocumentField(MemberNokkenPoole)
+    chamber: str = fields.StringField()
 
 
-@vvcli.utils.lock
-class RollcallNominate:
+class RollcallNominate(mongoengine.EmbeddedDocument):
     """Nominate statistics of a rollcall."""
 
-    conditional: int
-    spread: t.List[float]
-    classified: float
-    log_likelihood: float
-    geo_mean_probability: float
-    pre: float
-    mid: t.List[float]
-
-
-@vvcli.utils.lock
-class Rollcall:
-    """A rollcall."""
-
-    last_updated: datetime.datetime
-    vote_question: str
-    legis_num: str
-    vote_desc: str
-    nominate: RollcallNominate
-    congress: int
-    id: str
-    date: datetime.date
-    vote_type: str
-    _id: str
-    session: int
-    rollnumber: int
-    bill_number: str
-    vote_result: str
-    percent_support: float
-    chamber: str
-    clerk_rollnumber: int
+    conditional: int = fields.IntField()
+    spread: t.List[float] = fields.ListField(fields.IntField())
+    classified: float = fields.FloatField()
+    log_likelihood: float = fields.FloatField()
+    geo_mean_probability: float = fields.FloatField()
+    pre: float = fields.FloatField()
+    mid: t.List[float] = fields.ListField(fields.FloatField())
 
 
 def connect(db_name: str) -> pymongo.database.Database:
@@ -161,3 +135,38 @@ class DB:
 
     def delete_member(self, filter: Member):
         ...
+
+
+class Vote(mongoengine.EmbeddedDocument):
+    cast_code = fields.IntField()
+    icpsr = fields.StringField()
+    prob = fields.FloatField()
+
+
+class Rollcall(mongoengine.Document):
+    bill_number = fields.StringField()
+    clerk_rollnumber = fields.IntField()
+    congress = fields.IntField()
+    session = fields.IntField()
+    # action_time = fields.EmbeddedDocumentField()
+    vote_desc = fields.StringField()
+    # nay_count = fields.IntField()
+    vote_question = fields.StringField()
+    # vote_total = fields.EmbeddedDocumentField()
+    # party_vote_count = fields.EmbeddedDocumentField()
+    # yea_count = fields.IntField()
+    _id = fields.ObjectIdField()
+    rollnumber = fields.IntField()
+    # vote_count = fields.EmbeddedDocumentField()
+    # majority = fields.StringField()
+    id = fields.StringField()
+    vote_type = fields.StringField()
+    nominate = fields.EmbeddedDocumentField(RollcallNominate)
+    vote_result = fields.StringField()
+    date = fields.DateTimeField()
+    legis_num = fields.StringField()
+    # date_chamber_rollnumber = fields.EmbeddedDocumentField()
+    percent_support = fields.FloatField()
+    chamber = fields.StringField()
+    last_updated = fields.DateTimeField()
+    votes = fields.ListField(fields.EmbeddedDocumentField(Vote))

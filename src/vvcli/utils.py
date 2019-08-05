@@ -4,7 +4,7 @@ import typing as t
 import attr
 
 
-lock = functools.partial(attr, frozen=True, slots=True, cmp=False)
+lock = functools.partial(attr.s, frozen=True, slots=True, cmp=False)
 
 UNSET = "__UNSET__"
 
