@@ -25,6 +25,9 @@ include *.txt
 include *.yaml
 include mypy.ini
 include pycli
+include  .pylintrc
+include  changelog.d/towncrier_template.rst
+
 
 # added by check_manifest.py
 recursive-include examples *.py
