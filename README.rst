@@ -33,17 +33,17 @@ Overview
     :alt: Commits since latest release
     :target: https://github.com/voteview/vvtool/compare/v0.1.0...master
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/voteview.svg
+.. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/voteview.svg
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/voteview-dev.svg
     :alt: Supported versions
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/voteview.svg
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/voteview-dev.svg
     :alt: Supported implementations
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
 
 .. end-badges
@@ -57,13 +57,13 @@ Installation
 
 ::
 
-    pip install voteview
+    pip install voteview-dev
 
 Documentation
 =============
 
 
-https://vvtool.readthedocs.io/
+https://voteview-dev.readthedocs.io/
 
 
 Development
