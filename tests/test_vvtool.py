@@ -21,3 +21,6 @@ def test_ingest(ingest):
 
     [member] = vvtool.app.Member.objects(party_code=100)
     assert member.congress == 116
+
+    [rollcall] = vvtool.app.Rollcall.objects(rollnumber=85)
+    assert rollcall.congress == 116

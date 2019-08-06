@@ -40,3 +40,6 @@ def ingest(db):
 
     for member in demo_members():
         vvtool.app.Member(**member).save()
+
+    for rollcall in demo_rollcalls():
+        vvtool.app.Rollcall(**rollcall).save()

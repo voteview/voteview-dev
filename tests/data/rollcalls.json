@@ -1,10 +1,6 @@
 [
     {
         "id": "RH1160085",
-        "action_time": {
-            "time_etz": "19:35",
-            "text": "7:35 PM"
-        },
         "votes": [
             {
                 "unaccented_name": "Abraham",
@@ -38,73 +34,13 @@
         "vote_type": "YEA-AND-NAY",
         "legis_num": "H RES 131",
         "vote_desc": "Providing for consideration of the conference report to accompany H.J. Res. 31, making further continuing appropriations for the Department of Homeland Security for fiscal year 2019, and for other purposes; providing for proceedings during the period from February 15, 2019 through February 22, 2019",
-        "majority": "D",
+
         "session": 1,
         "rollnumber": 85,
         "date": "2019-02-14",
-        "vote_totals": {
-            "totals_by_party_header": {
-                "party_header": "Party",
-                "not_voting_header": "Not Voting",
-                "nay_header": "Nays",
-                "yea_header": "Yeas",
-                "present_header": "Answered \u201cPresent\u201d"
-            },
-            "totals_by_vote": {
-                "present_total": 0,
-                "not_voting_total": 5,
-                "yea_total": 230,
-                "nay_total": 196,
-                "total_stub": "Totals"
-            },
-            "totals_by_party": [
-                {
-                    "party": "Republican",
-                    "not_voting_total": 1,
-                    "yea_total": 0,
-                    "nay_total": 196,
-                    "present_total": 0
-                },
-                {
-                    "party": "Democratic",
-                    "not_voting_total": 4,
-                    "yea_total": 230,
-                    "nay_total": 0,
-                    "present_total": 0
-                },
-                {
-                    "party": "Independent",
-                    "not_voting_total": 0,
-                    "yea_total": 0,
-                    "nay_total": 0,
-                    "present_total": 0
-                }
-            ]
-        },
         "vote_result": "Passed",
         "clerk_rollnumber": 86,
         "vote_question": "On Agreeing to the Resolution",
-        "date_chamber_rollnumber": {
-            "$numberLong": "20190214000085"
-        },
-        "party_vote_counts": {
-            "200": {
-                "9": 1,
-                "6": 196
-            },
-            "100": {
-                "1": 230,
-                "9": 4
-            }
-        },
-        "nay_count": 196,
-        "vote_counts": {
-            "1": 230,
-            "9": 5,
-            "6": 196
-        },
-        "yea_count": 230,
-        "percent_support": 53.99,
         "bill_number": "HRES131",
         "nominate": {
             "pre": 1,
@@ -125,10 +61,6 @@
     },
     {
         "id": "RH1160086",
-        "action_time": {
-            "time_etz": "20:59",
-            "text": "8:59 PM"
-        },
         "votes": [
             {
                 "unaccented_name": "Abraham",
@@ -162,75 +94,13 @@
         "vote_type": "YEA-AND-NAY",
         "legis_num": "H J RES 31",
         "vote_desc": "Making further continuing appropriations for the Department of Homeland Security for fiscal year 2019, and for other purposes",
-        "majority": "D",
+
         "session": 1,
         "rollnumber": 86,
         "date": "2019-02-14",
-        "vote_totals": {
-            "totals_by_party_header": {
-                "party_header": "Party",
-                "not_voting_header": "Not Voting",
-                "nay_header": "Nays",
-                "yea_header": "Yeas",
-                "present_header": "Answered \u201cPresent\u201d"
-            },
-            "totals_by_vote": {
-                "present_total": 0,
-                "not_voting_total": 4,
-                "yea_total": 300,
-                "nay_total": 128,
-                "total_stub": "Totals"
-            },
-            "totals_by_party": [
-                {
-                    "party": "Republican",
-                    "not_voting_total": 1,
-                    "yea_total": 87,
-                    "nay_total": 109,
-                    "present_total": 0
-                },
-                {
-                    "party": "Democratic",
-                    "not_voting_total": 3,
-                    "yea_total": 213,
-                    "nay_total": 19,
-                    "present_total": 0
-                },
-                {
-                    "party": "Independent",
-                    "not_voting_total": 0,
-                    "yea_total": 0,
-                    "nay_total": 0,
-                    "present_total": 0
-                }
-            ]
-        },
         "vote_result": "Passed",
         "clerk_rollnumber": 87,
         "vote_question": "On Agreeing to the Conference Report",
-        "date_chamber_rollnumber": {
-            "$numberLong": "20190214000086"
-        },
-        "party_vote_counts": {
-            "200": {
-                "1": 87,
-                "9": 1,
-                "6": 109
-            },
-            "100": {
-                "1": 213,
-                "9": 3,
-                "6": 19
-            }
-        },
-        "nay_count": 128,
-        "vote_counts": {
-            "1": 300,
-            "9": 4,
-            "6": 128
-        },
-        "yea_count": 300,
-        "percent_support": 70.09,
         "bill_number": "HJRES31",
         "nominate": {
             "pre": 0.578,

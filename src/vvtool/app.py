@@ -62,12 +62,14 @@ class Member(mongoengine.Document):
 
     """
 
+    # _id = fields.ObjectIdField()
+    congress: int = fields.IntField()
     person_id: str = fields.ReferenceField(Person)
     state_abbrev: str = fields.StringField()
     nominate: MemberNominate = fields.EmbeddedDocumentField(MemberNominate)
     icpsr: int = fields.IntField()
     last_updated: datetime.datetime = fields.DateTimeField()
-    id: str = fields.StringField()
+    member_id: str = fields.StringField(db_field="id")
     # born: int = fields.IntField()
     # died: t.Optional[int] = fields.IntField()
     district_code: int = fields.IntField()
@@ -94,13 +96,15 @@ class RollcallNominate(mongoengine.EmbeddedDocument):
 
 class Vote(mongoengine.EmbeddedDocument):
     cast_code = fields.IntField()
-    icpsr = fields.StringField()
+    icpsr = fields.IntField()
     prob = fields.FloatField()
 
     meta = {"strict": False}
 
 
 class Rollcall(mongoengine.Document):
+    """A rollcall object."""
+
     bill_number = fields.StringField()
     clerk_rollnumber = fields.IntField()
     congress = fields.IntField()
@@ -112,11 +116,11 @@ class Rollcall(mongoengine.Document):
     # vote_total = fields.EmbeddedDocumentField()
     # party_vote_count = fields.EmbeddedDocumentField()
     # yea_count = fields.IntField()
-    _id = fields.ObjectIdField()
+
     rollnumber = fields.IntField()
     # vote_count = fields.EmbeddedDocumentField()
     # majority = fields.StringField()
-    id = fields.StringField()
+    rollcall_id = fields.StringField(db_field="id")
     vote_type = fields.StringField()
     nominate = fields.EmbeddedDocumentField(RollcallNominate)
     vote_result = fields.StringField()
