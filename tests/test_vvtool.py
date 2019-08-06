@@ -1,5 +1,6 @@
 """Tests for vvtool."""
 
+import datetime
 import os
 
 import pymongo
@@ -24,3 +25,16 @@ def test_ingest(ingest):
 
     [rollcall] = vvtool.app.Rollcall.objects(rollnumber=85)
     assert rollcall.congress == 116
+
+
+def test_update_rollcall_date(ingest):
+    """Updating a rollcall date is visible afterwards."""
+
+    initial = datetime.date(2019, 2, 14)
+    [rollcall] = vvtool.app.Rollcall.objects(rollnumber=85)
+    assert rollcall.date == initial
+
+    new = datetime.date(2019, 1, 1)
+    vvtool.app.Rollcall.objects(rollnumber=85).update(date=new)
+    [rollcall] = vvtool.app.Rollcall.objects(rollnumber=85)
+    assert rollcall.date == new

@@ -124,7 +124,7 @@ class Rollcall(mongoengine.Document):
     vote_type = fields.StringField()
     nominate = fields.EmbeddedDocumentField(RollcallNominate)
     vote_result = fields.StringField()
-    date = fields.DateTimeField()
+    date = fields.DateField()
     legis_num = fields.StringField()
     # date_chamber_rollnumber = fields.EmbeddedDocumentField()
     percent_support = fields.FloatField()
