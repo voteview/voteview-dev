@@ -20,3 +20,4 @@ twine
 docshtest
 pytest-cov
 tox-docker
+pylint-mongoengine

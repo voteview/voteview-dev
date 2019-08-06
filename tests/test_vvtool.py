@@ -1,11 +1,8 @@
 """Tests for vvtool."""
 
 import datetime
-import os
 
-import pymongo
-import pymongo.database
-import tests.helpers
+import pytest
 
 import vvtool.app
 
@@ -15,7 +12,8 @@ def test_import():
     assert vvtool.app
 
 
-def test_ingest(ingest):
+@pytest.mark.usefixtures("ingest")
+def test_ingest():
     """The ``ingest`` fixture puts data into the database."""
     [person] = set(vvtool.app.Person.objects(bioname="ADAMS, Alma"))
     assert person.born == 1946
@@ -27,7 +25,8 @@ def test_ingest(ingest):
     assert rollcall.congress == 116
 
 
-def test_update_rollcall_date(ingest):
+@pytest.mark.usefixtures("ingest")
+def test_update_rollcall_date():
     """Updating a rollcall date is visible afterwards."""
 
     initial = datetime.date(2019, 2, 14)
