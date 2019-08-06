@@ -1,3 +1,5 @@
+"""Configuration data for tests."""
+
 import pathlib
 
 
