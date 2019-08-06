@@ -5,13 +5,9 @@ from __future__ import annotations
 import datetime
 import typing as t
 
-import attr
 import mongoengine
 import pymongo
 from mongoengine import fields
-
-import vvtool.exceptions
-import vvtool.utils
 
 
 class MemberNokkenPoole(mongoengine.EmbeddedDocument):
@@ -95,6 +91,8 @@ class RollcallNominate(mongoengine.EmbeddedDocument):
 
 
 class Vote(mongoengine.EmbeddedDocument):
+    """A single member's vote on a rollcall."""
+
     cast_code = fields.IntField()
     icpsr = fields.IntField()
     prob = fields.FloatField()
@@ -138,23 +136,3 @@ class Rollcall(mongoengine.Document):
 def connect(db_name: str = "voteview") -> pymongo.database.Database:
     """Connect to a mongo database."""
     return mongoengine.connect(db_name)
-
-
-# TODO Make MemberQuery etc that has all the same fields as the actual data values but all optional.
-@attr.s(auto_attribs=True, cmp=False)
-class DB:
-    """The Voteview database object."""
-
-    db_name: str
-
-    @property
-    def conn(self) -> pymongo.database.Database:
-        """The connection object."""
-        return connect(self.db_name)
-
-    def update_person(self, filter, update):
-        ...
-
-
-def update_person(filter, update):
-    filter

@@ -1,3 +1,5 @@
+# pylint: disable=unused-import
+
 from .app import Member
 from .app import MemberNokkenPoole
 from .app import MemberNominate
