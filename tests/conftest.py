@@ -37,3 +37,6 @@ def demo_persons():
 def ingest(db):
     for person in demo_persons():
         vvtool.app.Person(**person).save()
+
+    for member in demo_members():
+        vvtool.app.Member(**member).save()

@@ -18,3 +18,6 @@ def test_ingest(ingest):
     """The ``ingest`` fixture puts data into the database."""
     [person] = set(vvtool.app.Person.objects(bioname="ADAMS, Alma"))
     assert person.born == 1946
+
+    [member] = vvtool.app.Member.objects(party_code=100)
+    assert member.congress == 116

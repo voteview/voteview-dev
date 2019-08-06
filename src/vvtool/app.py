@@ -54,7 +54,7 @@ class Person(mongoengine.Document):
     meta = {"collection": "voteview_persons", "strict": False}
 
 
-class Member(mongoengine.EmbeddedDocument):
+class Member(mongoengine.Document):
     """An ICSPR-member-congress.
 
     Some persons get more than one ICPSR number and nominate score. The `Member`
