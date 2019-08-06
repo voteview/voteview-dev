@@ -8,7 +8,7 @@ little bit helps, and credit will always be given.
 Bug reports
 ===========
 
-When `reporting a bug <https://github.com/voteview/vvtool/issues>`_ please include:
+When `reporting a bug <https://github.com/voteview/voteview-dev/issues>`_ please include:
 
     * Your operating system name and version.
     * Any details about your local setup that might be helpful in troubleshooting.
@@ -24,7 +24,7 @@ articles, and such.
 Feature requests and feedback
 =============================
 
-The best way to send feedback is to file an issue at https://github.com/voteview/vvtool/issues.
+The best way to send feedback is to file an issue at https://github.com/voteview/voteview-dev/issues.
 
 If you are proposing a feature:
 
