@@ -47,6 +47,9 @@ class Person(mongoengine.Document):
     bioguide_id: t.Optional[str] = fields.StringField()
     died: t.Optional[int] = fields.IntField()
     bioname: str = fields.StringField()
+    _id = fields.ObjectIdField()
+    icpsr_list = fields.ListField(fields.IntField())
+    last_updated = fields.DateTimeField()
 
     meta = {"collection": "voteview_persons", "strict": False}
 

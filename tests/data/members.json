@@ -1,0 +1,112 @@
+[
+  {
+    "chamber": "House",
+    "congress": 116,
+    "party_code": 200,
+      "person_id":
+      "58757a0eda8b8ec52487a97f"
+      ,
+    "state_abbrev": "LA",
+    "icpsr": 21522,
+    "id": "MH11621522",
+    "district_code": 5,
+    "biography": "ABRAHAM, Ralph, a Representative from Louisiana; born in Alto, Richland Parish, La., September 16, 1954; graduated from Mangham High School, Mangham, La., 1972; B.A., Louisiana State University, Baton Rouge, La., 1980; D.V.M., Louisiana State University School of Veterinary Medicine, Baton Rouge, La., 1980; M.D., Louisiana State University School of Medicine, New Orleans, La., 1994; Mississippi National Guard Special Forces, 1986-1989; flight instructor; general family practitioner; aviation medical examiner; elected as a Republican to the One Hundred Fourteenth Congress (January 3, 2015-present).",
+    "bioguide_id": "A000374",
+    "born": 1954,
+    "died": null,
+    "bioname": "ABRAHAM, Ralph",
+    "nominate": {
+      "dim2": 0.278,
+      "dim1": 0.51,
+      "number_of_votes": 58,
+      "number_of_errors": 2,
+      "geo_mean_probability": 0.9466762838847276,
+      "log_likelihood": -3.17828849577921,
+      "total_number_of_votes": 2131,
+      "conditional": 1
+    },
+    "congresses": [
+      [
+        114,
+        116
+      ]
+    ],
+    "congresses_house": [
+      [
+        114,
+        116
+      ]
+    ],
+    "nvotes_yea_nay": 72,
+    "nvotes_abs": 14,
+    "nvotes_against_party": 1,
+    "nvotes_party_split": 0,
+    "voting_dates": {
+      "House": [
+        "2015-01-06",
+        "0000-00-00"
+      ]
+    },
+    "nokken_poole": {
+      "dim2": 0.4142521400481767,
+      "dim1": 0.5783531158549169,
+      "number_of_votes": 58
+    },
+    "elected_house": 114
+  },
+  {
+    "chamber": "House",
+    "congress": 116,
+    "party_code": 100,
+      "person_id":
+      "587579feda8b8ec524878d2f"
+      ,
+    "state_abbrev": "NC",
+    "icpsr": 21545,
+    "id": "MH11621545",
+    "district_code": 12,
+    "biography": "ADAMS, Alma, a Representative from North Carolina; born in High Point, Guilford County, N.C., May 27, 1946; graduated from West Side High School, Newark, N.J., 1964; B.S., North Carolina Agricultural and Technical State University, Greensboro, N.C., 1968; M.S., North Carolina Agricultural and Technical State University, Greensboro, N.C., 1972; Ph.D., Ohio State University, Columbus, Ohio, 1981; artist; faculty, Bennett College, Greensboro, N.C., 1972-2012; member of the Greensboro, N.C., school board, 1984-1986; member of the Greensboro, N.C., city council, 1987-1994; member of the North Carolina state house of representatives, 1994-2014; elected simultaneously as a Democrat to the One Hundred Thirteenth and One Hundred Fourteenth Congresses, by special election, to fill the vacancy caused by the resignation of United States Representative Melvin L. Watt (November 4, 2014-present).",
+    "bioguide_id": "A000370",
+    "born": 1946,
+    "died": null,
+    "bioname": "ADAMS, Alma",
+    "nominate": {
+      "dim2": 0.021,
+      "dim1": -0.469,
+      "number_of_votes": 67,
+      "number_of_errors": 0,
+      "geo_mean_probability": 0.9923311133711863,
+      "log_likelihood": -0.5157957312715773,
+      "total_number_of_votes": 2078,
+      "conditional": 1
+    },
+    "congresses": [
+      [
+        113,
+        116
+      ]
+    ],
+    "congresses_house": [
+      [
+        113,
+        116
+      ]
+    ],
+    "nvotes_yea_nay": 86,
+    "nvotes_abs": 0,
+    "nvotes_against_party": 0,
+    "nvotes_party_split": 0,
+    "voting_dates": {
+      "House": [
+        "2014-11-13",
+        "0000-00-00"
+      ]
+    },
+    "nokken_poole": {
+      "dim2": -0.23870201462282484,
+      "dim1": -0.521567413210567,
+      "number_of_votes": 67
+    },
+    "elected_house": 113
+  }
+]
