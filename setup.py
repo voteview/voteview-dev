@@ -23,16 +23,13 @@ def read(*names, **kwargs):
         return fh.read()
 
 
-try:
-    with open("requirements.in") as f:
-        INSTALL_REQUIRES = f.read().splitlines()
-except FileNotFoundError:
-    print(sys.exc_info())
-    INSTALL_REQUIRES = []
+INSTALL_REQUIRES = read("requirements.in").splitlines()
+DEV_INSTALL_REQUIRES = read("dev-requirements.txt").splitlines()
+
 
 # Enable code coverage for C code: we can't use CFLAGS=-coverage in tox.ini, since that may mess with compiling
 setup(
-    name="voteview",
+    name="voteview-dev",
     version="0.1.0",
     description="Voteview command-line interface.",
     long_description="%s\n%s"
@@ -44,7 +41,7 @@ setup(
     ),
     author="Adam Boche",
     author_email="adamboche@gmail.com",
-    url="https://github.com/voteview/vvcli",
+    url="https://github.com/voteview/vvtool",
     packages=find_packages("src"),
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
@@ -76,10 +73,6 @@ setup(
     install_requires=INSTALL_REQUIRES
     # eg: "aspectlib==1.1.1", "six>=1.7",
     ,
-    extras_require={
-        # eg:
-        #   "rst": ["docutils>=0.11"],
-        #   ":python_version=="2.6"": ["argparse"],
-    },
-    entry_points={"console_scripts": ["vvcli = vvcli.cli:cli"]},
+    extras_require={"dev": DEV_INSTALL_REQUIRES},
+    entry_points={"console_scripts": ["vvtool = vvtool.cli:cli"]},
 )

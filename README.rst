@@ -10,44 +10,40 @@ Overview
     * - docs
       - |docs|
     * - tests
-      - | |travis| |appveyor|
+      - | |travis|
         |
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
 
-.. |docs| image:: https://readthedocs.org/projects/vvcli/badge/?style=flat
-    :target: https://readthedocs.org/projects/vvcli
+.. |docs| image:: https://readthedocs.org/projects/vvtool/badge/?style=flat
+    :target: https://readthedocs.org/projects/vvtool
     :alt: Documentation Status
 
 
-.. |travis| image:: https://travis-ci.org/voteview/vvcli.svg?branch=master
+.. |travis| image:: https://travis-ci.org/voteview/vvtool.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/voteview/vvcli
-
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/voteview/vvcli?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/voteview/vvcli
+    :target: https://travis-ci.org/voteview/vvtool
 
 .. |version| image:: https://img.shields.io/pypi/v/voteview.svg
     :alt: PyPI Package latest release
     :target: https://pypi.org/pypi/voteview
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/vvcli/v0.1.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/vvtool/v0.1.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/voteview/vvcli/compare/v0.1.0...master
+    :target: https://github.com/voteview/vvtool/compare/v0.1.0...master
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/voteview.svg
+.. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/voteview.svg
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/voteview-dev.svg
     :alt: Supported versions
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/voteview.svg
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/voteview-dev.svg
     :alt: Supported implementations
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
 
 .. end-badges
@@ -61,13 +57,13 @@ Installation
 
 ::
 
-    pip install voteview
+    pip install voteview-dev
 
 Documentation
 =============
 
 
-https://vvcli.readthedocs.io/
+https://voteview-dev.readthedocs.io/
 
 
 Development

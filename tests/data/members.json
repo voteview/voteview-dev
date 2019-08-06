@@ -1,0 +1,52 @@
+[
+    {
+        "chamber": "House",
+        "congress": 116,
+        "party_code": 200,
+        "person_id": "58757a0eda8b8ec52487a97f",
+        "state_abbrev": "LA",
+        "icpsr": 21522,
+        "id": "MH11621522",
+        "district_code": 5,
+        "nominate": {
+            "dim2": 0.278,
+            "dim1": 0.51,
+            "number_of_votes": 58,
+            "number_of_errors": 2,
+            "geo_mean_probability": 0.9466762838847276,
+            "log_likelihood": -3.17828849577921,
+            "total_number_of_votes": 2131,
+            "conditional": 1
+        },
+        "nokken_poole": {
+            "dim2": 0.4142521400481767,
+            "dim1": 0.5783531158549169,
+            "number_of_votes": 58
+        }
+    },
+    {
+        "chamber": "House",
+        "congress": 116,
+        "party_code": 100,
+        "person_id": "587579feda8b8ec524878d2f",
+        "state_abbrev": "NC",
+        "icpsr": 21545,
+        "id": "MH11621545",
+        "district_code": 12,
+        "nominate": {
+            "dim2": 0.021,
+            "dim1": -0.469,
+            "number_of_votes": 67,
+            "number_of_errors": 0,
+            "geo_mean_probability": 0.9923311133711863,
+            "log_likelihood": -0.5157957312715773,
+            "total_number_of_votes": 2078,
+            "conditional": 1
+        },
+        "nokken_poole": {
+            "dim2": -0.23870201462282484,
+            "dim1": -0.521567413210567,
+            "number_of_votes": 67
+        }
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "id": "RH1160085",
+        "votes": [
+            {
+                "unaccented_name": "Abraham",
+                "icpsr": 21522,
+                "text": "Abraham",
+                "cast_code": 6,
+                "prob": 100,
+                "bioguide_id": "A000374",
+                "state": "LA",
+                "role": "legislator",
+                "party": "R",
+                "sort_field": "Abraham",
+                "cast_str": "Nay"
+            },
+            {
+                "unaccented_name": "Adams",
+                "icpsr": 21545,
+                "text": "Adams",
+                "cast_code": 1,
+                "prob": 100,
+                "bioguide_id": "A000370",
+                "state": "NC",
+                "role": "legislator",
+                "party": "D",
+                "sort_field": "Adams",
+                "cast_str": "Yea"
+            }
+        ],
+        "congress": 116,
+        "chamber": "House",
+        "vote_type": "YEA-AND-NAY",
+        "legis_num": "H RES 131",
+        "vote_desc": "Providing for consideration of the conference report to accompany H.J. Res. 31, making further continuing appropriations for the Department of Homeland Security for fiscal year 2019, and for other purposes; providing for proceedings during the period from February 15, 2019 through February 22, 2019",
+
+        "session": 1,
+        "rollnumber": 85,
+        "date": "2019-02-14",
+        "vote_result": "Passed",
+        "clerk_rollnumber": 86,
+        "vote_question": "On Agreeing to the Resolution",
+        "bill_number": "HRES131",
+        "nominate": {
+            "pre": 1,
+            "conditional": 1,
+            "geo_mean_probability": 0.999,
+            "classified": 1,
+            "mid": [
+                0.066,
+                0.05
+            ],
+            "spread": [
+                0.713,
+                -0.107
+            ],
+            "log_likelihood": -0.487,
+            "need_pre_prob_update": 1
+        }
+    },
+    {
+        "id": "RH1160086",
+        "votes": [
+            {
+                "unaccented_name": "Abraham",
+                "icpsr": 21522,
+                "text": "Abraham",
+                "cast_code": 6,
+                "prob": 49.9,
+                "bioguide_id": "A000374",
+                "state": "LA",
+                "role": "legislator",
+                "party": "R",
+                "sort_field": "Abraham",
+                "cast_str": "Nay"
+            },
+            {
+                "unaccented_name": "Adams",
+                "icpsr": 21545,
+                "text": "Adams",
+                "cast_code": 1,
+                "prob": 94.5,
+                "bioguide_id": "A000370",
+                "state": "NC",
+                "role": "legislator",
+                "party": "D",
+                "sort_field": "Adams",
+                "cast_str": "Yea"
+            }
+        ],
+        "congress": 116,
+        "chamber": "House",
+        "vote_type": "YEA-AND-NAY",
+        "legis_num": "H J RES 31",
+        "vote_desc": "Making further continuing appropriations for the Department of Homeland Security for fiscal year 2019, and for other purposes",
+
+        "session": 1,
+        "rollnumber": 86,
+        "date": "2019-02-14",
+        "vote_result": "Passed",
+        "clerk_rollnumber": 87,
+        "vote_question": "On Agreeing to the Conference Report",
+        "bill_number": "HJRES31",
+        "nominate": {
+            "pre": 0.578,
+            "conditional": 1,
+            "geo_mean_probability": 0.712,
+            "classified": 0.874,
+            "mid": [
+                0.626,
+                0.78
+            ],
+            "spread": [
+                0.212,
+                -0.282
+            ],
+            "log_likelihood": -145.314
+        }
+    }
+]
