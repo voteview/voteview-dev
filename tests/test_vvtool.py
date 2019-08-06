@@ -34,6 +34,6 @@ def test_update_rollcall_date():
     assert rollcall.date == initial
 
     new = datetime.date(2019, 1, 1)
-    vvtool.app.Rollcall.objects(rollnumber=85).update(date=new)
+    vvtool.app.Rollcall.objects(rollcall_id="RH1160085").update(date=new)
     [rollcall] = vvtool.app.Rollcall.objects(rollnumber=85)
     assert rollcall.date == new
