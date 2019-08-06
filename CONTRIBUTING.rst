@@ -37,11 +37,11 @@ Development
 
 To set up `vvtool` for local development:
 
-1. Fork `vvtool <https://github.com/voteview/vvtool>`_
+1. Fork `vvtool <https://github.com/voteview/voteview-dev>`_
    (look for the "Fork" button).
 2. Clone your fork locally::
 
-    git clone git@github.com:your_name_here/vvtool.git
+    git clone git@github.com:your_name_here/voteview-dev.git
 
 3. Create a branch for local development::
 
