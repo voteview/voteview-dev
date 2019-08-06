@@ -25,3 +25,6 @@ include *.txt
 include *.yaml
 include mypy.ini
 include pycli
+
+# added by check_manifest.py
+recursive-include examples *.py
