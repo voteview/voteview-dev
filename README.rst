@@ -29,9 +29,9 @@ Overview
     :alt: PyPI Package latest release
     :target: https://pypi.org/pypi/voteview-dev
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.1.svg
     :alt: Commits since latest release
-    :target: https://github.com/voteview/voteview-dev/compare/v0.1.0...master
+    :target: https://github.com/voteview/voteview-dev/compare/v0.1.1...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel
