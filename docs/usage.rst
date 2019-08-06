@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use vvcli in a project::
+To use vvtool in a project::
 
-	import vvcli
+	import vvtool

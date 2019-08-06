@@ -16,26 +16,26 @@ Overview
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
 
-.. |docs| image:: https://readthedocs.org/projects/vvcli/badge/?style=flat
-    :target: https://readthedocs.org/projects/vvcli
+.. |docs| image:: https://readthedocs.org/projects/vvtool/badge/?style=flat
+    :target: https://readthedocs.org/projects/vvtool
     :alt: Documentation Status
 
 
-.. |travis| image:: https://travis-ci.org/voteview/vvcli.svg?branch=master
+.. |travis| image:: https://travis-ci.org/voteview/vvtool.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/voteview/vvcli
+    :target: https://travis-ci.org/voteview/vvtool
 
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/voteview/vvcli?branch=master&svg=true
+.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/voteview/vvtool?branch=master&svg=true
     :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/voteview/vvcli
+    :target: https://ci.appveyor.com/project/voteview/vvtool
 
 .. |version| image:: https://img.shields.io/pypi/v/voteview.svg
     :alt: PyPI Package latest release
     :target: https://pypi.org/pypi/voteview
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/vvcli/v0.1.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/vvtool/v0.1.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/voteview/vvcli/compare/v0.1.0...master
+    :target: https://github.com/voteview/vvtool/compare/v0.1.0...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/voteview.svg
     :alt: PyPI Wheel
@@ -67,7 +67,7 @@ Documentation
 =============
 
 
-https://vvcli.readthedocs.io/
+https://vvtool.readthedocs.io/
 
 
 Development

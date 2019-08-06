@@ -1,4 +1,4 @@
-"""Tests for vvcli."""
+"""Tests for vvtool."""
 
 import os
 
@@ -6,17 +6,17 @@ import pymongo
 import pymongo.database
 import tests.helpers
 
-import vvcli.app
+import vvtool.app
 
 
 def test_import():
     """Importing the module worked."""
-    assert vvcli.app
+    assert vvtool.app
 
 
 def test_connect():
     """Connect to the database."""
-    db = vvcli.app.connect(os.environ["VVCLI_DB_NAME"])
+    db = vvtool.app.connect(os.environ["VVCLI_DB_NAME"])
     assert isinstance(db, pymongo.database.Database)
 
 

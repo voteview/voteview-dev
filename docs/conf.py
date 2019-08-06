@@ -24,7 +24,7 @@ if os.getenv("SPELLCHECK"):
 
 source_suffix = ".rst"
 master_doc = "index"
-project = "vvcli"
+project = "vvtool"
 year = "2019"
 author = "Adam Boche"
 copyright = "{0}, {1}".format(year, author)
@@ -33,8 +33,8 @@ version = release = "0.1.0"
 pygments_style = "trac"
 templates_path = ["."]
 extlinks = {
-    "issue": ("https://github.com/voteview/vvcli/issues/%s", "#"),
-    "pr": ("https://github.com/voteview/vvcli/pull/%s", "PR #"),
+    "issue": ("https://github.com/voteview/vvtool/issues/%s", "#"),
+    "pr": ("https://github.com/voteview/vvtool/pull/%s", "PR #"),
 }
 # on_rtd is whether we are on readthedocs.org
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"
@@ -52,4 +52,4 @@ napoleon_use_ivar = True
 napoleon_use_rtype = False
 napoleon_use_param = True
 
-autoapi_dirs = ["../src/vvcli"]
+autoapi_dirs = ["../src/vvtool"]

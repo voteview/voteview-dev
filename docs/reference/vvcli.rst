@@ -1,9 +1,9 @@
-vvcli
+vvtool
 =====
 
 .. testsetup::
 
-    from vvcli import *
+    from vvtool import *
 
-.. automodule:: vvcli
+.. automodule:: vvtool
     :members:

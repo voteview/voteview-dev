@@ -6,17 +6,17 @@ Why does this file exist, and why not put this in __main__?
   You might be tempted to import things from __main__ later, but that will cause
   problems: the code will get executed twice:
 
-  - When you run `python -mvvcli` python will execute
+  - When you run `python -mvvtool` python will execute
     ``__main__.py`` as a script. That means there won't be any
-    ``vvcli.__main__`` in ``sys.modules``.
+    ``vvtool.__main__`` in ``sys.modules``.
   - When you import __main__ it will get executed again (as a module) because
-    there's no ``vvcli.__main__`` in ``sys.modules``.
+    there's no ``vvtool.__main__`` in ``sys.modules``.
 
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
 import click
 
-from vvcli import app
+from vvtool import app
 
 
 rollcall = click.Command("rollcall")

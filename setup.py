@@ -44,7 +44,7 @@ setup(
     ),
     author="Adam Boche",
     author_email="adamboche@gmail.com",
-    url="https://github.com/voteview/vvcli",
+    url="https://github.com/voteview/vvtool",
     packages=find_packages("src"),
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],
@@ -81,5 +81,5 @@ setup(
         #   "rst": ["docutils>=0.11"],
         #   ":python_version=="2.6"": ["argparse"],
     },
-    entry_points={"console_scripts": ["vvcli = vvcli.cli:cli"]},
+    entry_points={"console_scripts": ["vvtool = vvtool.cli:cli"]},
 )

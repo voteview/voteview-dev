@@ -1,5 +1,5 @@
 """
-Entrypoint module, in case you use `python -mvvcli`.
+Entrypoint module, in case you use `python -mvvtool`.
 
 
 Why does this file exist, and why __main__? For more info, read:
@@ -8,8 +8,8 @@ Why does this file exist, and why __main__? For more info, read:
 - https://docs.python.org/2/using/cmdline.html#cmdoption-m
 - https://docs.python.org/3/using/cmdline.html#cmdoption-m
 """
-import vvcli.cli
+import vvtool.cli
 
 
 if __name__ == "__main__":
-    vvcli.cli.cli()
+    vvtool.cli.cli()

@@ -10,8 +10,8 @@ import mongoengine
 import pymongo
 from mongoengine import fields
 
-import vvcli.exceptions
-import vvcli.utils
+import vvtool.exceptions
+import vvtool.utils
 
 
 class MemberNokkenPoole(mongoengine.EmbeddedDocument):

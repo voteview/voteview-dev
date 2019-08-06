@@ -102,7 +102,7 @@ parser = argparse.ArgumentParser(description="Download artifacts from AppVeyor."
 parser.add_argument(
     "--id",
     metavar="PROJECT_ID",
-    default="voteview/vvcli",
+    default="voteview/vvtool",
     help="Project ID in AppVeyor.",
 )
 parser.add_argument(

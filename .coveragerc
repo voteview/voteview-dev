@@ -6,7 +6,7 @@ source =
 [run]
 branch = true
 source =
-    vvcli
+    vvtool
     tests
 parallel = true
 

@@ -130,8 +130,8 @@ def bundle(cfg):
             ".",
             *requirements,
             "-m",
-            "vvcli",
-            "-o" "vvcli.pex",
+            "vvtool",
+            "-o" "vvtool.pex",
             "--disable-cache",
         ]
     )
