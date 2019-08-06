@@ -25,10 +25,6 @@ Overview
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/voteview/vvtool
 
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/voteview/vvtool?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/voteview/vvtool
-
 .. |version| image:: https://img.shields.io/pypi/v/voteview.svg
     :alt: PyPI Package latest release
     :target: https://pypi.org/pypi/voteview
