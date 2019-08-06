@@ -1,3 +1,6 @@
+"""Custom exceptions for the module."""
+
+
 class VoteviewException(Exception):
     """Base class for all Voteview exceptions."""
 
