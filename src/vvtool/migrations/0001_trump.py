@@ -1,7 +1,8 @@
-import codecs
+"""Add initial Trump votes from Congressional Quarterly file."""
+
+
 import csv
 import importlib.resources
-import io
 
 import vvtool.migrations.data
 
@@ -16,17 +17,16 @@ def read_votes():
 
 
 def up():
-
-    for trump_vote in read_votes():
-        for rollcall in vvtool.Rollcall.objects(rollcall_id=trump_vote["VoteviewID"]):
-            print(rollcall)
-
+    """Add initial Trump votes from Congressional Quarterly file."""
+    for record in read_votes():
+        rollcall = vvtool.Rollcall.objects(rollcall_id=record["VoteviewID"])
         new_vote = {"icpsr": TRUMP_ICPSR, "cast_code": 1}
-        rollcall.update(push__votes=new_vote)
-        rollcall.save()
+        rollcall.update_one(push__votes=new_vote)
 
 
 def down():
+    """Remove initial Trump votes from Congressional Quarterly file."""
     for trump_vote in read_votes():
-        [rollcall] = vvtool.Rollcall.objects(rollcall_id=trump_vote["VoteviewID"])
-        rollcall.votes.update(pull__)
+        rollcall = vvtool.Rollcall.objects(rollcall_id=trump_vote["VoteviewID"])
+        new_vote = {"icpsr": TRUMP_ICPSR, "cast_code": 1}
+        rollcall.update_one(pull__votes=new_vote)
