@@ -1,6 +1,13 @@
 vvtool package
 ==============
 
+Subpackages
+-----------
+
+.. toctree::
+
+   vvtool.migrations
+
 Submodules
 ----------
 
