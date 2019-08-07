@@ -58,7 +58,6 @@ class Member(mongoengine.Document):
 
     """
 
-    # _id = fields.ObjectIdField()
     congress: int = fields.IntField()
     person_id: str = fields.ReferenceField(Person)
     state_abbrev: str = fields.StringField()
@@ -66,8 +65,6 @@ class Member(mongoengine.Document):
     icpsr: int = fields.IntField()
     last_updated: datetime.datetime = fields.DateTimeField()
     member_id: str = fields.StringField(db_field="id")
-    # born: int = fields.IntField()
-    # died: t.Optional[int] = fields.IntField()
     district_code: int = fields.IntField()
     party_code: int = fields.IntField()
     nokken_poole: MemberNokkenPoole = fields.EmbeddedDocumentField(MemberNokkenPoole)
@@ -107,24 +104,15 @@ class Rollcall(mongoengine.Document):
     clerk_rollnumber = fields.IntField()
     congress = fields.IntField()
     session = fields.IntField()
-    # action_time = fields.EmbeddedDocumentField()
     vote_desc = fields.StringField()
-    # nay_count = fields.IntField()
     vote_question = fields.StringField()
-    # vote_total = fields.EmbeddedDocumentField()
-    # party_vote_count = fields.EmbeddedDocumentField()
-    # yea_count = fields.IntField()
-
     rollnumber = fields.IntField()
-    # vote_count = fields.EmbeddedDocumentField()
-    # majority = fields.StringField()
     rollcall_id = fields.StringField(db_field="id")
     vote_type = fields.StringField()
     nominate = fields.EmbeddedDocumentField(RollcallNominate)
     vote_result = fields.StringField()
     date = fields.DateField()
     legis_num = fields.StringField()
-    # date_chamber_rollnumber = fields.EmbeddedDocumentField()
     percent_support = fields.FloatField()
     chamber = fields.StringField()
     last_updated = fields.DateTimeField()
@@ -133,6 +121,8 @@ class Rollcall(mongoengine.Document):
     meta = {"collection": "voteview_rollcalls", "strict": False}
 
 
-def connect(db_name: str = "voteview") -> pymongo.database.Database:
+def connect(
+    db_name: str = "voteview", host="127.0.0.1", port=27017
+) -> pymongo.database.Database:
     """Connect to a mongo database."""
-    return mongoengine.connect(db_name)
+    return mongoengine.connect(db_name, host=host, port=port)

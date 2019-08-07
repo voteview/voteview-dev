@@ -16,22 +16,22 @@ Overview
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
 
-.. |docs| image:: https://readthedocs.org/projects/vvtool/badge/?style=flat
-    :target: https://readthedocs.org/projects/vvtool
+.. |docs| image:: https://readthedocs.org/projects/voteview-dev/badge/?style=flat
+    :target: https://readthedocs.org/projects/voteview-dev
     :alt: Documentation Status
 
 
-.. |travis| image:: https://travis-ci.org/voteview/vvtool.svg?branch=master
+.. |travis| image:: https://travis-ci.org/voteview/voteview-dev.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/voteview/vvtool
+    :target: https://travis-ci.org/voteview/voteview-dev
 
-.. |version| image:: https://img.shields.io/pypi/v/voteview.svg
+.. |version| image:: https://img.shields.io/pypi/v/voteview-dev.svg
     :alt: PyPI Package latest release
-    :target: https://pypi.org/pypi/voteview
+    :target: https://pypi.org/pypi/voteview-dev
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/vvtool/v0.1.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.1.svg
     :alt: Commits since latest release
-    :target: https://github.com/voteview/vvtool/compare/v0.1.0...master
+    :target: https://github.com/voteview/voteview-dev/compare/v0.1.1...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel

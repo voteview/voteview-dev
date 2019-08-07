@@ -4,4 +4,4 @@ Installation
 
 At the command line::
 
-    pip install voteview
+    pip install voteview-dev

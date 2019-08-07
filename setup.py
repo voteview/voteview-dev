@@ -30,7 +30,7 @@ DEV_INSTALL_REQUIRES = read("dev-requirements.txt").splitlines()
 # Enable code coverage for C code: we can't use CFLAGS=-coverage in tox.ini, since that may mess with compiling
 setup(
     name="voteview-dev",
-    version="0.1.0",
+    version="version=0.1.1",
     description="Voteview command-line interface.",
     long_description="%s\n%s"
     % (
@@ -41,7 +41,7 @@ setup(
     ),
     author="Adam Boche",
     author_email="adamboche@gmail.com",
-    url="https://github.com/voteview/vvtool",
+    url="https://github.com/voteview/voteview-dev",
     packages=find_packages("src"),
     package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob("src/*.py")],

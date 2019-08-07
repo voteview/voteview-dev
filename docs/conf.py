@@ -28,13 +28,13 @@ project = "vvtool"
 year = "2019"
 author = "Adam Boche"
 copyright = "{0}, {1}".format(year, author)
-version = release = "0.1.0"
+version = release = "version = release = 0.1.1"
 
 pygments_style = "trac"
 templates_path = ["."]
 extlinks = {
-    "issue": ("https://github.com/voteview/vvtool/issues/%s", "#"),
-    "pr": ("https://github.com/voteview/vvtool/pull/%s", "PR #"),
+    "issue": ("https://github.com/voteview/voteview-dev/issues/%s", "#"),
+    "pr": ("https://github.com/voteview/voteview-dev/pull/%s", "PR #"),
 }
 # on_rtd is whether we are on readthedocs.org
 on_rtd = os.environ.get("READTHEDOCS", None) == "True"

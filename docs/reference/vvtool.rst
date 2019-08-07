@@ -1,9 +1,30 @@
-vvtool
-======
+vvtool package
+==============
 
-.. testsetup::
+Submodules
+----------
 
-    from vvtool import *
+vvtool.app module
+-----------------
+
+.. automodule:: vvtool.app
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vvtool.exceptions module
+------------------------
+
+.. automodule:: vvtool.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
 
 .. automodule:: vvtool
-    :members:
+   :members:
+   :undoc-members:
+   :show-inheritance:
