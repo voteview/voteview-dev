@@ -15,7 +15,8 @@ import vvtool.app
 def _db():
     """Access the database specified by the VVCLI_DB_NAME environment variable."""
     name = os.environ["VVCLI_DB_NAME"]
-    conn = vvtool.app.connect(name)
+    port = int(os.environ.get("MONGO_27017_TCP", 27017))
+    conn = vvtool.app.connect(name, port=port)
     yield
     conn.drop_database(name)
 

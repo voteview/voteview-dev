@@ -121,6 +121,8 @@ class Rollcall(mongoengine.Document):
     meta = {"collection": "voteview_rollcalls", "strict": False}
 
 
-def connect(db_name: str = "voteview") -> pymongo.database.Database:
+def connect(
+    db_name: str = "voteview", host="127.0.0.1", port=27017
+) -> pymongo.database.Database:
     """Connect to a mongo database."""
-    return mongoengine.connect(db_name)
+    return mongoengine.connect(db_name, host=host, port=port)
