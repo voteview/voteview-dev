@@ -12,7 +12,7 @@ jobs:
     dist: xenial
     sudo: required
     env:
-    - TOXENV=py37,report
+    - TOXENV=py37,report,codecov
   - python: '3.7'
     dist: xenial
     sudo: required
