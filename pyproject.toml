@@ -5,12 +5,13 @@
 
 [tool.poetry]
 name = "voteview-dev"
+packages = [{include="vvtool", from="src"}]
 version = "0.1.1"
 description = "Voteview command-line interface"
 authors = ["Adam Boche <aboche@ucla.edu>"]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 click = "^7.0"
 pymongo = "^3.8"
 mongoengine = "^0.18.2"
@@ -38,6 +39,7 @@ twine = "^1.13"
 docshtest = "^0.0.2"
 pytest-cov = "^2.7"
 tox-docker = "^1.4"
+q = "^2.6"
 [tool.towncrier]
 
    package = "vvtool"
