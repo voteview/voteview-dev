@@ -1,5 +1,42 @@
+[build-system]
+    requires = ["poetry>=0.12"]
+    build-backend = "poetry.masonry.api"
 
 
+[tool.poetry]
+name = "voteview-dev"
+version = "0.1.1"
+description = "Voteview command-line interface"
+authors = ["Adam Boche <aboche@ucla.edu>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+click = "^7.0"
+pymongo = "^3.8"
+mongoengine = "^0.18.2"
+pylint = "^2.3"
+coverage = "^4.5"
+
+
+
+
+[tool.poetry.dev-dependencies]
+cuvner = "^18.0"
+tox = "^3.13"
+versioneer = "^0.18.0"
+pex = "^1.6"
+bump2version = "^0.5.10"
+docutils = "^0.15.2"
+readme-renderer = "^24.0"
+isort = "^4.3"
+mypy = "^0.720.0"
+pytest-sphinx = "^0.2.2"
+towncrier = "^19.2"
+py-find-injection = "^0.1.1"
+twine = "^1.13"
+docshtest = "^0.0.2"
+pytest-cov = "^2.7"
+tox-docker = "^1.4"
 [tool.towncrier]
 
    package = "vvtool"
