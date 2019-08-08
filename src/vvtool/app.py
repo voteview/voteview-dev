@@ -1,7 +1,5 @@
 """Representations of the Voteview data."""
 
-from __future__ import annotations
-
 import datetime
 import typing as t
 

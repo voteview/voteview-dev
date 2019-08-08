@@ -11,24 +11,24 @@ services:
 
 jobs:
   include:
-  - python: '3.7'
+  - python: '3.6'
     dist: xenial
     sudo: required
     env:
     - TOXENV=py37,report,codecov
-  - python: '3.7'
+  - python: '3.6'
     dist: xenial
     sudo: required
     env:
     - TOXENV=check
-  - python: '3.7'
+  - python: '3.6'
     dist: xenial
     sudo: required
     env:
     - TOXENV=doc
   - stage: Bump version and push into master.
     if: branch = release
-    python: 3.7
+    python: 3.6
     dist: xenial
     sudo: required
     deploy:

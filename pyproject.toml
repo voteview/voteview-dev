@@ -12,13 +12,14 @@ authors = ["Adam Boche <aboche@ucla.edu>"]
 readme = "README.rst"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6"
 click = "^7.0"
 pymongo = "^3.8"
 mongoengine = "^0.18.2"
 pylint = "^2.3"
 coverage = "^4.5"
 alley = "^0.0.3"
+importlib_resources = "^1.0"
 
 
 
