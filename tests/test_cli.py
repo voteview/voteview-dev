@@ -21,6 +21,8 @@ def test_migrate_cli(db):
     Migrating down removes the votes.
     """
 
+    host, port = db.client.address
+
     # Given:
     # The rollcalls on which Trump voted exist.
     for rollcall in MIGRATION.read_votes():
@@ -31,7 +33,7 @@ def test_migrate_cli(db):
 
     # When:
     # Execute the migration.
-    run(["migrate", "-d", db.name, "up", "1"])
+    run(["migrate", "-d", db.name, "--host", host, "--port", str(port), "up", "1"])
 
     # Then:
     # Trump's votes appear in the database.
@@ -39,7 +41,7 @@ def test_migrate_cli(db):
 
     # When:
     # Do the down migration.
-    run(["migrate", "-d", db.name, "down", "1"])
+    run(["migrate", "-d", db.name, "--host", host, "--port", str(port), "down", "1"])
 
     # Then:
     # Trump's votes don't appear in the database.
