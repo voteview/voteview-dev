@@ -39,6 +39,7 @@ jobs:
 
 
 before_install:
+- pip install --upgrade pip
 - python --version
 - uname -a
 - lsb_release -a
