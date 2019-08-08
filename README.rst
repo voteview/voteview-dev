@@ -21,7 +21,7 @@ Overview
     :alt: Documentation Status
 
 
-.. |travis| image:: https://travis-ci.org/voteview/voteview-dev.svg?branch=master
+.. |travis| image:: https://img.shields.io/travis/voteview/voteview-dev/master
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/voteview/voteview-dev
 
