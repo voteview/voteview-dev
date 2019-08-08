@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 import os
+import sys
 
 
 extensions = [
@@ -53,3 +54,6 @@ napoleon_use_rtype = False
 napoleon_use_param = True
 
 autoapi_dirs = ["../src/vvtool"]
+
+for path in autoapi_dirs:
+    sys.path.append(path)
