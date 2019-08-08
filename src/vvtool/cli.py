@@ -53,7 +53,7 @@ def create(ctx, name):
 
 
 @migrate.command()
-@click.argument("migration_id", required=False)
+@click.argument("migration_id", required=False, type=int)
 @click.option("--dry-run", "fake", is_flag=True, help="Don't actually run it.")
 @click.pass_obj
 def up(ctx, migration_id, fake):
@@ -63,7 +63,7 @@ def up(ctx, migration_id, fake):
 
 
 @migrate.command()
-@click.argument("migration_id")
+@click.argument("migration_id", type=int)
 @click.pass_obj
 def down(ctx, migration_id):
     """Downgrade the database to a specified migration."""
