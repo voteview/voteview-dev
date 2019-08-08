@@ -8,10 +8,8 @@ import click
 
 PACKAGE_DIR = pathlib.Path(__file__).parent
 
-
-cli = click.Group(
-    help="Tools for the Voteview database."
-)  # pylint: disable=invalid-name
+# pylint: disable=invalid-name
+cli = click.Group(help="Tools for the Voteview database.")
 
 
 @cli.group()
