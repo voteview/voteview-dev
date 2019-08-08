@@ -1,6 +1,7 @@
 """Test setup module.
 
-PyTest executes this at the beginning of a test sesion."""
+PyTest executes this at the beginning of a test sesion.
+"""
 
 import json
 import os
