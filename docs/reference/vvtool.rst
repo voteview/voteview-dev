@@ -27,14 +27,6 @@ vvtool.cli module
    :undoc-members:
    :show-inheritance:
 
-vvtool.exceptions module
-------------------------
-
-.. automodule:: vvtool.exceptions
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 Module contents
 ---------------
