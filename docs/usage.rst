@@ -9,7 +9,7 @@ Create a migration by running ``vvtool`` on the command line:
    $ poetry install
    ...
 
-   $ poetry run vvtool migrate create add_votes
+   $ poetry run vvtool -d voteview migrate create add_votes
 
 
 
@@ -130,7 +130,7 @@ If you have ``vvtool`` installed, run migration ``0001`` by executing:
 
 .. code-block:: bash
 
-     $  vvtool migrate -d voteview up 1
+     $  vvtool -d voteview migrate up 1
 
 
 Check that it worked.
