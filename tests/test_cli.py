@@ -86,7 +86,7 @@ def test_status_empty(db, tmp_path):
     assert "All migrations registered" in output.decode()
 
 
-def test_db_name_required(db):
+def test_db_name_required():
     """Database name is required for migrate commands."""
     proc = subprocess.run(["vvtool", "migrate", "status"], check=False)
     assert proc.returncode == 1
