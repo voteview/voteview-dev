@@ -6,7 +6,7 @@
 [tool.poetry]
 name = "voteview-dev"
 packages = [{include="vvtool", from="src"}]
-version = "0.1.1"
+version = "0.1.2"
 description = "Voteview command-line interface"
 authors = ["Adam Boche <aboche@ucla.edu>"]
 readme = "README.rst"
@@ -35,7 +35,7 @@ isort = "^4.3"
 mypy = "^0.720.0"
 pytest-sphinx = "^0.2.2"
 towncrier = "^19.2"
-py-find-injection = "^0.1.1"
+py-find-injection = "^0.1.2"
 twine = "^1.13"
 docshtest = "^0.0.2"
 pytest-cov = "^2.7"

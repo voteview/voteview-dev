@@ -12,4 +12,4 @@ from .app import Vote
 from .app import connect
 
 
-__version__ = "__version__ = 0.1.1"
+__version__ = "0.1.2"
