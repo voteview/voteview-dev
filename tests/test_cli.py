@@ -1,4 +1,12 @@
+"""Test vvtool command-line interface."""
+
+import importlib
 import subprocess
+
+import vvtool
+
+
+MIGRATION = importlib.import_module("vvtool.migrations.0001_trump")
 
 
 def run(args, **kwargs):
