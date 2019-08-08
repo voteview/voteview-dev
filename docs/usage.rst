@@ -2,6 +2,18 @@
 Usage
 =====
 
+Development
+------------
+
+This section is to be executed on your local development computer.
+
+You will need to:
+
+- Install Python 3.6 or above.
+- Install Poetry (``python3.6 -m pip install --user poetry``).
+- Install and run Docker server.
+
+
 Create a migration by running ``vvtool`` on the command line:
 
 .. code-block:: bash
@@ -9,7 +21,7 @@ Create a migration by running ``vvtool`` on the command line:
    $ poetry install
    ...
 
-   $ poetry run vvtool migrate create add_votes
+   $ poetry run vvtool -d voteview migrate create add_votes
 
 
 
@@ -120,17 +132,45 @@ To run the tests, install docker and run tox.
 
 .. code-block:: bash
 
-    $ tox
+    $ poetry run tox
 
 
-When you're satisfied that the migration works, run the migration on a database. Use the id number of the migration.
+
+When you're satisfied that the migration works, create a pull request into ``master``. Update the changelog with a description of your changes by creating a file in ``changelog.d/`` named ``<pull request number>.change``. For example, ``changelog.d/123.change`` for pull request number 123. Commit.
 
 
-If you have ``vvtool`` installed, run migration ``0001`` by executing:
+Release
+--------
+
+This section is to be executed on your local development computer.
+
+Bump the version with `poetry run bump2version`. Edit the changelog with ``poetry run towncrier --yes``. Commit, push and merge the pull request. Run ``poetry build``  followed by ``poetry publish``. It will prompt for PyPI credentials for uploading.
+
+
+Execution
+-----------
+
+This section is to be executed on the staging server. It could be automated to occur on a regular schedule or upon release using webhooks, but is currently manual.
+
+Install ``voteview-dev`` into Python 3.6.
 
 .. code-block:: bash
 
-     $  vvtool migrate -d voteview up 1
+     $ python3.6 -m pip install --user voteview-dev
 
 
-Check that it worked.
+Check the current migration status with
+
+.. code-block:: bash
+
+    $ vvtool -d voteview migrate status
+
+
+
+Find the id number of the migration to execute.
+
+Run the migration using the id number. For example, to upgrade through migration number ``0001``, run:
+
+.. code-block:: bash
+
+     $  vvtool -d voteview migrate up 1

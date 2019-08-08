@@ -29,9 +29,9 @@ Overview
     :alt: PyPI Package latest release
     :target: https://pypi.org/pypi/voteview-dev
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.3.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.4.svg
     :alt: Commits since latest release
-    :target: https://github.com/voteview/voteview-dev/compare/v0.1.3...master
+    :target: https://github.com/voteview/voteview-dev/compare/v0.1.4...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel
@@ -71,21 +71,4 @@ Development
 
 To run the all tests run::
 
-    tox
-
-Note, to combine the coverage data from all the tox environments run:
-
-.. list-table::
-    :widths: 10 90
-    :stub-columns: 1
-
-    - - Windows
-      - ::
-
-            set PYTEST_ADDOPTS=--cov-append
-            tox
-
-    - - Other
-      - ::
-
-            PYTEST_ADDOPTS=--cov-append tox
+    $ poetry run tox
