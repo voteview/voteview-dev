@@ -21,7 +21,7 @@ Overview
     :alt: Documentation Status
 
 
-.. |travis| image:: https://travis-ci.org/voteview/voteview-dev.svg?branch=master
+.. |travis| image:: https://img.shields.io/travis/voteview/voteview-dev/master
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/voteview/voteview-dev
 
@@ -29,9 +29,9 @@ Overview
     :alt: PyPI Package latest release
     :target: https://pypi.org/pypi/voteview-dev
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.1.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.2.svg
     :alt: Commits since latest release
-    :target: https://github.com/voteview/voteview-dev/compare/v0.1.1...master
+    :target: https://github.com/voteview/voteview-dev/compare/v0.1.2...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel
