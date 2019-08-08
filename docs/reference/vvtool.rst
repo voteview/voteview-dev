@@ -19,6 +19,14 @@ vvtool.app module
    :undoc-members:
    :show-inheritance:
 
+vvtool.cli module
+-----------------
+
+.. automodule:: vvtool.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 vvtool.exceptions module
 ------------------------
 
