@@ -7,6 +7,13 @@ Development
 
 This section is to be executed on your local development computer.
 
+You will need to:
+
+- Install Python 3.6 or above.
+- Install Poetry (``python3.6 -m pip install --user poetry``).
+- Install and run Docker server.
+
+
 Create a migration by running ``vvtool`` on the command line:
 
 .. code-block:: bash
@@ -125,7 +132,7 @@ To run the tests, install docker and run tox.
 
 .. code-block:: bash
 
-    $ tox
+    $ poetry run tox
 
 
 
