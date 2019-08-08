@@ -3,6 +3,7 @@
 
 import csv
 import importlib.resources
+import typing as t
 
 import vvtool.migrations.data
 
@@ -11,7 +12,8 @@ DATA_FILE = "initial_trump_votes.csv"
 TRUMP_ICPSR = 99912
 
 
-def read_votes():
+def read_votes() -> t.List[t.Dict[str, str]]:
+    """Read Trump vote records from the data file."""
     with importlib.resources.open_text(vvtool.migrations.data, DATA_FILE) as file:
         return list(csv.DictReader(file))
 
