@@ -1,3 +1,5 @@
+"""Command-line interface for Voteview database."""
+
 import pathlib
 
 import alley
@@ -7,7 +9,9 @@ import click
 PACKAGE_DIR = pathlib.Path(__file__).parent
 
 
-cli = click.Group(help="Tools for the Voteview database.")
+cli = click.Group(
+    help="Tools for the Voteview database."
+)  # pylint: disable=invalid-name
 
 
 @cli.group()

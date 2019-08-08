@@ -18,7 +18,7 @@ def read_votes() -> t.List[t.Dict[str, str]]:
         return list(csv.DictReader(file))
 
 
-def up(db):
+def up(db=None):  # pylint: disable=unused-argument
     """Add initial Trump votes from Congressional Quarterly file."""
     for record in read_votes():
         rollcall = vvtool.Rollcall.objects(rollcall_id=record["VoteviewID"])
@@ -26,7 +26,7 @@ def up(db):
         rollcall.update_one(push__votes=new_vote)
 
 
-def down(db):
+def down(db=None):  # pylint: disable=unused-argument
     """Remove initial Trump votes from Congressional Quarterly file."""
     for trump_vote in read_votes():
         rollcall = vvtool.Rollcall.objects(rollcall_id=trump_vote["VoteviewID"])
