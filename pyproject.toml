@@ -44,7 +44,7 @@ tox-docker = "^1.4"
 q = "^2.6"
 check-manifest = "^0.39.0"
 pylint_mongoengine = "^0.3.3"
-coverage = "^4.5"
+coverage = "^5.0"
 
 
 [tool.poetry.scripts]
