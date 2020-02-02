@@ -19,7 +19,7 @@ Create a migration by running ``vvtool`` on the command line:
    $ poetry install
    ...
 
-   $ poetry run vvtool --database voteview migrate create add_votes
+   $ poetry run vvtool --database voteview migration create add_votes
 
 
 
@@ -159,7 +159,7 @@ Find the id number of the migration to execute.
 
 .. code-block:: bash
 
-    % vvtool --host localhost --database=voteview migrate status
+    % vvtool --host localhost --database=voteview migration status
 
 Note this ``localhost`` is really the staging server because of ssh forwarding.
 
@@ -170,4 +170,4 @@ Run the migration using the id number. For example, to upgrade through migration
 
 .. code-block:: bash
 
-     %  vvtool --host=localhost --database=voteview migrate up 1
+     %  vvtool --host=localhost --database=voteview migration up 1

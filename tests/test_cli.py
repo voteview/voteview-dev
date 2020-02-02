@@ -40,7 +40,7 @@ def test_migrate_cli(db):
 
     # When:
     # Execute the migration.
-    run(db, ["migrate", "up", "1"])
+    run(db, ["migration", "up", "1"])
 
     # Then:
     # Trump's votes appear in the database.
@@ -48,7 +48,7 @@ def test_migrate_cli(db):
 
     # When:
     # Do the down migration.
-    run(db, ["migrate", "down", "1"])
+    run(db, ["migration", "down", "1"])
 
     # Then:
     # Trump's votes don't appear in the database.
@@ -64,29 +64,29 @@ def test_status_empty(db, tmp_path):
 
     # Then:
     # No migrations are shown.
-    output = run(db, ["migrate", "--path", str(tmp_path), "status"])
+    output = run(db, ["migration", "--path", str(tmp_path), "status"])
     assert "All migrations registered" in output.stderr.decode()
 
     # When:
     # Create a migration.
-    run(db, ["migrate", "--path", str(tmp_path), "create", "first_migration"])
+    run(db, ["migration", "--path", str(tmp_path), "create", "first_migration"])
 
     # Then:
     # The migration apepars in the status output.
-    output = run(db, ["migrate", "--path", str(tmp_path), "status"]).stderr
+    output = run(db, ["migration", "--path", str(tmp_path), "status"]).stderr
     assert "first_migration" in output.decode()
 
     # When:
     # Execute the migration.
-    run(db, ["migrate", "--path", str(tmp_path), "up", "1"])
+    run(db, ["migration", "--path", str(tmp_path), "up", "1"])
 
     # Then:
     # All migrations have been registered.
-    output = run(db, ["migrate", "--path", str(tmp_path), "status"]).stderr
+    output = run(db, ["migration", "--path", str(tmp_path), "status"]).stderr
     assert "All migrations registered" in output.decode()
 
 
 def test_db_name_required():
-    """Database name is required for migrate commands."""
-    proc = subprocess.run(["vvtool", "migrate", "status"], check=False)
+    """Database name is required for migration commands."""
+    proc = subprocess.run(["vvtool", "migration", "status"], check=False)
     assert proc.returncode == 1

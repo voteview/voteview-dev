@@ -56,13 +56,12 @@ def cli(ctx, database, username, password, host, port, auth):
     type=click.Path(exists=True, file_okay=False, writable=True, resolve_path=True),
     default=PACKAGE_DIR.joinpath("migrations/"),
 )
-def migrate(ctx, path):
+def migration(ctx, path):
     """Upgrade or downgrade the database with migrations."""
 
     db = ctx.obj["db_info"]
 
-    # if db.name is None:
-    #     raise ValueError("Database name is required.")
+    path.mkdir(exist_ok=True, parent=True)
 
     ctx.obj["migrations_info"] = vvtool.app.MongoMigrations(
         path=path,
@@ -75,7 +74,7 @@ def migrate(ctx, path):
     )
 
 
-@migrate.command()
+@migration.command()
 @click.pass_context
 def status(ctx):
     """Check the current database migration status."""
@@ -83,7 +82,7 @@ def status(ctx):
     ctx.obj["migrations_info"].migrations.show_status()
 
 
-@migrate.command()
+@migration.command()
 @click.argument("name")
 @click.pass_context
 def create(ctx, name):
@@ -94,7 +93,7 @@ def create(ctx, name):
     ctx.obj["migrations_info"].migrations.create(name)
 
 
-@migrate.command()
+@migration.command()
 @click.argument("migration_id", required=False, type=int)
 @click.option("--dry-run", "fake", is_flag=True, help="Don't actually run it.")
 @click.pass_context
@@ -104,7 +103,7 @@ def up(ctx, migration_id, fake):
     ctx.obj["migrations_info"].migrations.up(migration_id, fake)
 
 
-@migrate.command()
+@migration.command()
 @click.argument("migration_id", type=int)
 @click.pass_context
 def down(ctx, migration_id):
