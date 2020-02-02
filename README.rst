@@ -57,11 +57,3 @@ Documentation
 
 
 https://voteview-dev.readthedocs.io/
-
-
-Development
-===========
-
-To run the all tests run::
-
-    $ poetry run tox
