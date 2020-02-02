@@ -4,7 +4,6 @@ import logging
 import pathlib
 import typing as t
 
-import alley
 import attr
 import click
 
