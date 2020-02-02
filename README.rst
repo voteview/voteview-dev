@@ -21,9 +21,9 @@ Overview
     :alt: Documentation Status
 
 
-.. |travis| image:: https://img.shields.io/travis/voteview/voteview-dev/master
+.. |travis| image:: https://img.shields.io/travis/com/voteview/voteview-dev/master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/voteview/voteview-dev
+    :target: https://travis-ci.com/voteview/voteview-dev
 
 .. |version| image:: https://img.shields.io/pypi/v/voteview-dev.svg
     :alt: PyPI Package latest release
