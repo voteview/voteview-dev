@@ -27,7 +27,7 @@ Overview
 
 .. |version| image:: https://img.shields.io/pypi/v/voteview-dev.svg
     :alt: PyPI Package latest release
-    :target: https://pypi.org/pypi/voteview-dev
+    :target: https://pypi.org/project/voteview-dev
 
 .. |commits-since| image:: https://img.shields.io/github/commits-since/voteview/voteview-dev/v0.1.4.svg
     :alt: Commits since latest release
@@ -35,15 +35,15 @@ Overview
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/voteview-dev.svg
     :alt: PyPI Wheel
-    :target: https://pypi.org/pypi/voteview-dev
+    :target: https://pypi.org/project/voteview-dev
 
 .. |supported-versions| image:: https://img.shields.io/pypi/pyversions/voteview-dev.svg
     :alt: Supported versions
-    :target: https://pypi.org/pypi/voteview-dev
+    :target: https://pypi.org/project/voteview-dev
 
 .. |supported-implementations| image:: https://img.shields.io/pypi/implementation/voteview-dev.svg
     :alt: Supported implementations
-    :target: https://pypi.org/pypi/voteview-dev
+    :target: https://pypi.org/project/voteview-dev
 
 
 .. end-badges
