@@ -2,27 +2,21 @@
 
 import logging
 import pathlib
+import sys
+import types
 import typing as t
 
 import attr
 import click
+import q
 
-import vvtool.app
+import vvtool.application
+
+
+q(sys.argv)
 
 
 PACKAGE_DIR = pathlib.Path(__file__).parent
-
-
-@attr.s(auto_attribs=True, frozen=True, cmp=False)
-class DatabaseInfo:
-    """Database connection data."""
-
-    name: str
-    username: t.Optional[str]
-    password: t.Optional[str]
-    host: t.Optional[str]
-    port: t.Optional[int]
-    auth: t.Optional[str]
 
 
 @click.group()
@@ -38,8 +32,8 @@ def cli(ctx, database, username, password, host, port, auth):
 
     logging.basicConfig(level=logging.DEBUG)
 
-    ctx.obj = {}
-    ctx.obj["db_info"] = DatabaseInfo(
+    ctx.obj = types.SimpleNamespace()
+    ctx.obj.db_info = vvtool.application.DatabaseInfo(
         name=database,
         username=username,
         password=password,
@@ -59,11 +53,15 @@ def cli(ctx, database, username, password, host, port, auth):
 def migration(ctx, path):
     """Upgrade or downgrade the database with migrations."""
 
-    db = ctx.obj["db_info"]
+    db = ctx.obj.db_info
 
-    path.mkdir(exist_ok=True, parent=True)
+    path = pathlib.Path(path)
+    path.mkdir(exist_ok=True, parents=True)
+    import q
 
-    ctx.obj["migrations_info"] = vvtool.app.MongoMigrations(
+    q(path)
+
+    ctx.obj.engine = vvtool.application.engine(
         path=path,
         database=db.name,
         username=db.username,
@@ -79,7 +77,9 @@ def migration(ctx, path):
 def status(ctx):
     """Check the current database migration status."""
 
-    ctx.obj["migrations_info"].migrations.show_status()
+    print(ctx.obj.engine.__class__.__bases__)
+
+    ctx.obj.engine.show_status()
 
 
 @migration.command()
@@ -90,17 +90,20 @@ def create(ctx, name):
 
     Specify a name for the migration.
     """
-    ctx.obj["migrations_info"].migrations.create(name)
+    ctx.obj.engine.create(name)
 
 
 @migration.command()
 @click.argument("migration_id", required=False, type=int)
-@click.option("--dry-run", "fake", is_flag=True, help="Don't actually run it.")
+@click.option("--dry-run", is_flag=True, help="Don't actually run it.")
 @click.pass_context
-def up(ctx, migration_id, fake):
+def up(ctx, migration_id, dry_run):
     """Upgrade the database to a specified migration."""
+    import q
 
-    ctx.obj["migrations_info"].migrations.up(migration_id, fake)
+    q(vars(ctx.obj["migrations_info"]))
+
+    ctx.obj.engine.up(migration_id, dry_run)
 
 
 @migration.command()
@@ -109,4 +112,4 @@ def up(ctx, migration_id, fake):
 def down(ctx, migration_id):
     """Downgrade the database to a specified migration."""
 
-    ctx.obj["migrations_info"].migrations.down(migration_id)
+    ctx.obj.engine.down(migration_id)

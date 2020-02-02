@@ -3,21 +3,9 @@
 import datetime
 import typing as t
 
-import alley
 import mongoengine
 import pymongo
 from mongoengine import fields
-
-
-class MongoMigrations(alley.MongoMigrations):
-    """Mongo migrations collector.
-
-    Make it easier to specify a custom directory by using an empty path
-    instead of hard-coding ``migrations/``.
-
-    """
-
-    MIGRATIONS_DIRECTORY = ""
 
 
 class MemberNokkenPoole(mongoengine.EmbeddedDocument):
@@ -129,10 +117,3 @@ class Rollcall(mongoengine.Document):
     votes = fields.ListField(fields.EmbeddedDocumentField(Vote))
 
     meta = {"collection": "voteview_rollcalls", "strict": False}
-
-
-def connect(
-    db_name: str = "voteview", host="127.0.0.1", port=27017
-) -> pymongo.database.Database:
-    """Connect to a mongo database."""
-    return mongoengine.connect(db_name, host=host, port=port)

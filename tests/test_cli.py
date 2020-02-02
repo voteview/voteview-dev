@@ -29,7 +29,9 @@ def test_migrate_cli(db):
     Migrating up adds votes to the selected rollcalls.
     Migrating down removes the votes.
     """
+    import time
 
+    time.sleep()
     # Given:
     # The rollcalls on which Trump voted exist.
     for rollcall in MIGRATION.read_votes():

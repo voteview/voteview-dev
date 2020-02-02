@@ -9,7 +9,8 @@ import os
 import pytest
 import tests.config
 
-import vvtool.app
+import vvtool.application
+import vvtool.documents
 
 
 @pytest.fixture(name="client")
@@ -17,7 +18,7 @@ def _client():
     """Access the database specified by the VVCLI_DB_NAME environment variable."""
     name = os.environ["VVCLI_DB_NAME"]
     port = int(os.environ.get("MONGO_27017_TCP", 27017))
-    conn = vvtool.app.connect(name, port=port)
+    conn = vvtool.application.connect(name, port=port)
     yield conn
     conn.drop_database(name)
 
@@ -47,13 +48,13 @@ def demo_persons():
 def ingest(client):  # pylint: disable=unused-argument,invalid-name
     """Load all data from the demo files into the database."""
     for person in demo_persons():
-        vvtool.app.Person(**person).save()
+        vvtool.documents.Person(**person).save()
 
     for member in demo_members():
-        vvtool.app.Member(**member).save()
+        vvtool.documents.Member(**member).save()
 
     for rollcall in demo_rollcalls():
-        vvtool.app.Rollcall(**rollcall).save()
+        vvtool.documents.Rollcall(**rollcall).save()
 
 
 @pytest.fixture(name="db")
