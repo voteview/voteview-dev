@@ -8,16 +8,9 @@ Usage
    All steps are expected to be performed on your local computer, not the target database
    server.
 
+
 Creating migrations
 ---------------------------
-
-
-You will need to:
-
-- Install Python 3.6 or above.
-- Install Poetry (``python3.6 -m pip install --user poetry``).
-- Install and run Docker server.
-
 
 Create a migration by running ``vvtool`` on the command line:
 

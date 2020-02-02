@@ -6,7 +6,7 @@ Contents
    :maxdepth: 2
 
    readme
-   installation
+   prerequisites
    usage
    reference/index
    contributing

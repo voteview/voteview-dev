@@ -48,9 +48,9 @@ Overview
 
 .. end-badges
 
-Voteview command-line interface.
+Tools for managing the Voteview server.
 
-* Free software: GNU General Public License v3 (GPLv3)
+
 
 Documentation
 =============
