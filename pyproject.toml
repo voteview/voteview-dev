@@ -19,7 +19,7 @@ mongoengine = "0.18.2"
 pylint = "2.3"
 alley = "0.0.3"
 importlib_resources = "1.0"
-attrs = "19.1"
+attrs = "*"
 
 
 
