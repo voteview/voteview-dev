@@ -12,10 +12,12 @@ MIGRATION = importlib.import_module("vvtool.migrations.0001_trump")
 def run(db, args, **kwargs):
     """Run vvtool as a subprocess."""
     host, port = db.client.address
-    cli_args = ["vvtool", "-d", db.name, "--host", host, "--port", str(port)]
+
+    cli_args = ["-d", db.name, "--host", host, "--port", str(port)]
     check = kwargs.pop("check", True)
+    executable = "vvtool"
     return subprocess.run(
-        cli_args + list(args),
+        [executable] + list(args) + cli_args,
         check=check,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
@@ -29,9 +31,6 @@ def test_migrate_cli(db):
     Migrating up adds votes to the selected rollcalls.
     Migrating down removes the votes.
     """
-    import time
-
-    time.sleep()
     # Given:
     # The rollcalls on which Trump voted exist.
     for rollcall in MIGRATION.read_votes():
@@ -86,9 +85,3 @@ def test_status_empty(db, tmp_path):
     # All migrations have been registered.
     output = run(db, ["migration", "--path", str(tmp_path), "status"]).stderr
     assert "All migrations registered" in output.decode()
-
-
-def test_db_name_required():
-    """Database name is required for migration commands."""
-    proc = subprocess.run(["vvtool", "migration", "status"], check=False)
-    assert proc.returncode == 1

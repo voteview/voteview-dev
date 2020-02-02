@@ -44,7 +44,7 @@ class Migrations(object):
     """Manage MongoDB migrations."""
 
     MIGRATIONS_COLLECTION = "db_migrations"
-    MIGRATIONS_DIRECTORY = "migrations"
+    MIGRATIONS_DIRECTORY = ""
     NO_MIGRATIONS_MSG = "All migrations registered, nothing to execute"
 
     def __init__(self, path, db):
@@ -52,7 +52,14 @@ class Migrations(object):
         self.db = db
 
         self.directory = os.path.join(path, self.MIGRATIONS_DIRECTORY)
-        self.collection = self.db[self.MIGRATIONS_COLLECTION]
+
+        # This class really should be split into parts that need the db and parts that
+        # don't. But until somebody does that, I'm just going to hack it by using a
+        # conditional: assume we don't need the db if we didn't get one.
+        if self.db is None:
+            self.collection = None
+        else:
+            self.collection = self.db[self.MIGRATIONS_COLLECTION]
 
     def get_migration_files(self):
         """Find migrations files."""
