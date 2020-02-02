@@ -8,6 +8,8 @@ import alley
 import attr
 import click
 
+import vvtool.app
+
 
 PACKAGE_DIR = pathlib.Path(__file__).parent
 
@@ -53,17 +55,17 @@ def cli(ctx, database, username, password, host, port, auth):
 @click.option(
     "--path",
     type=click.Path(exists=True, file_okay=False, writable=True, resolve_path=True),
-    default=PACKAGE_DIR,
+    default=PACKAGE_DIR.joinpath("migrations/"),
 )
 def migrate(ctx, path):
     """Upgrade or downgrade the database with migrations."""
 
     db = ctx.obj["db_info"]
 
-    if db.name is None:
-        raise ValueError("Database name is required.")
+    # if db.name is None:
+    #     raise ValueError("Database name is required.")
 
-    ctx.obj["migrations_info"] = alley.MongoMigrations(
+    ctx.obj["migrations_info"] = vvtool.app.MongoMigrations(
         path=path,
         database=db.name,
         username=db.username,

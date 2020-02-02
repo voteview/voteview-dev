@@ -3,9 +3,21 @@
 import datetime
 import typing as t
 
+import alley
 import mongoengine
 import pymongo
 from mongoengine import fields
+
+
+class MongoMigrations(alley.MongoMigrations):
+    """Mongo migrations collector.
+
+    Make it easier to specify a custom directory by using an empty path
+    instead of hard-coding ``migrations/``.
+
+    """
+
+    MIGRATIONS_DIRECTORY = ""
 
 
 class MemberNokkenPoole(mongoengine.EmbeddedDocument):
