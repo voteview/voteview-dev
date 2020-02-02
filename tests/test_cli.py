@@ -65,23 +65,23 @@ def test_status_empty(db, tmp_path):
 
     # Then:
     # No migrations are shown.
-    output = run(db, ["migration", "--path", str(tmp_path), "status"])
+    output = run(db, ["migration", "status", "--path", str(tmp_path)])
     assert "All migrations registered" in output.stderr.decode()
 
     # When:
     # Create a migration.
-    run(db, ["migration", "--path", str(tmp_path), "create", "first_migration"])
+    run(db, ["migration", "create", "first_migration", "--path", str(tmp_path)])
 
     # Then:
     # The migration apepars in the status output.
-    output = run(db, ["migration", "--path", str(tmp_path), "status"]).stderr
+    output = run(db, ["migration", "status", "--path", str(tmp_path)]).stderr
     assert "first_migration" in output.decode()
 
     # When:
     # Execute the migration.
-    run(db, ["migration", "--path", str(tmp_path), "up", "1"])
+    run(db, ["migration", "up", "--path", str(tmp_path), "1"])
 
     # Then:
     # All migrations have been registered.
-    output = run(db, ["migration", "--path", str(tmp_path), "status"]).stderr
+    output = run(db, ["migration", "status", "--path", str(tmp_path)]).stderr
     assert "All migrations registered" in output.decode()

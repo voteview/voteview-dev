@@ -91,8 +91,8 @@ def status(ctx):
 
 @migration.command()
 @click.argument("name")
-@path_option
-def create(name):
+@db_context
+def create(ctx, name):
     """Create a new migration.
 
     Specify a name for the migration.
