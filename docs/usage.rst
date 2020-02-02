@@ -21,7 +21,7 @@ Create a migration by running ``vvtool`` on the command line:
    $ poetry install
    ...
 
-   $ poetry run vvtool -d voteview migrate create add_votes
+   $ poetry run vvtool --database voteview migrate create add_votes
 
 
 
@@ -136,41 +136,39 @@ To run the tests, install docker and run tox.
 
 
 
-When you're satisfied that the migration works, create a pull request into ``master``. Update the changelog with a description of your changes by creating a file in ``changelog.d/`` named ``<pull request number>.change``. For example, ``changelog.d/123.change`` for pull request number 123. Commit.
+When you're satisfied that the migration works,
+
+* Add your change in the changelog.
+* Create a pull request into ``master``.
 
 
-Release
---------
-
-This section is to be executed on your local development computer.
-
-Bump the version with `poetry run bump2version`. Edit the changelog with ``poetry run towncrier --yes``. Commit, push and merge the pull request. Run ``poetry build``  followed by ``poetry publish``. It will prompt for PyPI credentials for uploading.
 
 
 Execution
 -----------
 
-This section is to be executed on the staging server. It could be automated to occur on a regular schedule or upon release using webhooks, but is currently manual.
+In another terminal, set up ssh forwarding for the staging database server. Plug in the
+address or ssh alias of the staging server. Connections to the local MongoDB port will be
+forwarded to the remote MongoDB port.
 
-Install ``voteview-dev`` into Python 3.6.
 
 .. code-block:: bash
 
-     $ python3.6 -m pip install --user voteview-dev
-
-
-Check the current migration status with
-
-.. code-block:: bash
-
-    $ vvtool -d voteview migrate status
-
+   % ssh -NL 27017:localhost:27017 "${STAGING_SERVER}"
 
 
 Find the id number of the migration to execute.
+
+.. code-block:: bash
+
+    % vvtool --host localhost --database=voteview migrate status
+
+Note this ``localhost`` is really the staging server because of ssh forwarding.
+
+
 
 Run the migration using the id number. For example, to upgrade through migration number ``0001``, run:
 
 .. code-block:: bash
 
-     $  vvtool -d voteview migrate up 1
+     %  vvtool --host=localhost --database=voteview migrate up 1
