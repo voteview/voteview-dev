@@ -52,13 +52,6 @@ Voteview command-line interface.
 
 * Free software: GNU General Public License v3 (GPLv3)
 
-Installation
-============
-
-::
-
-    pip install voteview-dev
-
 Documentation
 =============
 

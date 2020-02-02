@@ -2,10 +2,15 @@
 Usage
 =====
 
-Development
-------------
 
-This section is to be executed on your local development computer.
+.. note::
+
+   All steps are expected to be performed on your local computer, not the target database
+   server.
+
+Creating migrations
+---------------------------
+
 
 You will need to:
 
@@ -167,7 +172,8 @@ Note this ``localhost`` is really the staging server because of ssh forwarding.
 
 
 
-Run the migration using the id number. For example, to upgrade through migration number ``0001``, run:
+Run the migration using the id number. For example, to upgrade through migration number
+``0001``, run:
 
 .. code-block:: bash
 
