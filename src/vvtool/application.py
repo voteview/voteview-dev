@@ -35,10 +35,7 @@ def engine(
         authentication_source=auth,
     )
 
-    if database is None:
-        db = None
-    else:
-        db = client[database]
+    db = client[database]
 
     eng = vvtool.manager.MigrationEngine(path, db)
     return eng
