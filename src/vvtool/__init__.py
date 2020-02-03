@@ -12,4 +12,4 @@ from .documents import RollcallNominate
 from .documents import Vote
 
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
