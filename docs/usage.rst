@@ -19,7 +19,7 @@ Create a migration by running ``vvtool`` on the command line:
    $ poetry install
    ...
 
-   $ poetry run vvtool --database voteview migration create add_votes
+   $ poetry run vvtool --database voteview migration create add-votes
 
 
 
