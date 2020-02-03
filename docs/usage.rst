@@ -61,7 +61,7 @@ To run the tests, install docker and run tox.
 When you're satisfied that the migration works,
 
 * Add your change in the changelog.
-* Create a pull request into ``master``.
+* Create a pull request into ``master`` on GitHub.
 
 
 
