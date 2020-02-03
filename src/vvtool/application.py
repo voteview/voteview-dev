@@ -22,7 +22,9 @@ class DatabaseInfo:
 def engine(
     path, database, username=None, password=None, host=None, port=None, auth=None
 ):
+
     client = mongoengine.connection.connect(
+        name=database,
         host=host,
         port=port,
         username=username,
