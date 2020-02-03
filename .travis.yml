@@ -15,7 +15,7 @@ jobs:
     dist: xenial
     sudo: required
     env:
-    - TOXENV=py36,report,codecov
+    - TOXENV=py36,codecov
   - python: '3.6'
     dist: xenial
     sudo: required
