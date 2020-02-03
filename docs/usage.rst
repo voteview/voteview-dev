@@ -53,6 +53,9 @@ To run the tests, install docker and run tox.
 
     $ poetry run tox
 
+.. note::
+
+   Just running ``tox`` won't work. It needs to be the ``tox`` inside the Poetry environment.
 
 
 When you're satisfied that the migration works,
