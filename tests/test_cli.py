@@ -36,6 +36,8 @@ def test_migrate_cli(db):
     for rollcall in MIGRATION.read_votes():
         vvtool.Rollcall(rollcall_id=rollcall["VoteviewID"]).save()
 
+    assert len(list(db.voteview_rollcalls.find())) == 153
+
     # Trump has not voted.
     assert list(db.voteview_rollcalls.find({"votes.icpsr": 99912})) == []
 
