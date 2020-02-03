@@ -77,7 +77,7 @@ forwarded to the remote MongoDB port.
 
 
 
-.. warning::
+.. danger::
 
     With ssh forwarding enabled, references to ``localhost`` on the MongoDB port will be
     forwarded to the remote server. Use caution when accessing the live database!
