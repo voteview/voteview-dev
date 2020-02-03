@@ -66,7 +66,7 @@ When you're satisfied that the migration works,
 Execution
 -----------
 
-In another terminal, set up ssh forwarding for the staging database server. Plug in the
+#. In another terminal, set up ssh forwarding for the staging database server. Plug in the
 address or ssh alias of the staging server. Connections to the local MongoDB port will be
 forwarded to the remote MongoDB port.
 
@@ -76,19 +76,40 @@ forwarded to the remote MongoDB port.
    % ssh -NL 27017:localhost:27017 "${STAGING_SERVER}"
 
 
-Find the id number of the migration to execute.
+
+.. warning::
+
+    With ssh forwarding enabled, references to ``localhost`` on the MongoDB port will be
+    forwarded to the remote server. Use caution when accessing the live database!
+
+
+#. Find the id number of the migration to execute.
 
 .. code-block:: bash
 
     % vvtool migration status --host localhost --database=voteview
 
-Note this ``localhost`` is really the staging server because of ssh forwarding.
 
 
-
-Run the migration using the id number. For example, to upgrade through migration number
+#. Run the migration using the id number. For example, to upgrade through migration number
 ``0001``, run:
 
 .. code-block:: bash
 
      %  vvtool migration up --host=localhost --database=voteview 1
+
+
+
+#. Check the status to see if the migration ran. It should report that your migration has
+executed.
+
+.. code-block:: bash
+
+    % vvtool migration status --host localhost --database=voteview
+
+
+
+#. Check the website to see if your changes took effect.
+
+
+#. Turn off the ssh forwarding by ending the ``ssh`` process.
