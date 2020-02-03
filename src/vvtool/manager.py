@@ -1,6 +1,11 @@
+"""Manage migrations."""
+
+
 # Modified from
 # https://github.com/xperscore/alley/blob/58bcd4b0a16f020e11a10c87ce7f8a60a98395af/alley/migrations.py
+# MIT License.
 
+# pylint: skip-file
 
 import imp
 import logging
@@ -40,7 +45,7 @@ class MigrationFile(object):
         return {"id": self.id, "filename": self.filename}
 
 
-class Migrations(object):
+class MigrationEngine(object):
     """Manage MongoDB migrations."""
 
     MIGRATIONS_COLLECTION = "db_migrations"

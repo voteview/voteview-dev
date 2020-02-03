@@ -4,7 +4,6 @@ import datetime
 import typing as t
 
 import mongoengine
-import pymongo
 from mongoengine import fields
 
 

@@ -1,3 +1,5 @@
+"""Manage database connections."""
+
 import typing as t
 
 import attr
@@ -22,6 +24,7 @@ class DatabaseInfo:
 def engine(
     path, database, username=None, password=None, host=None, port=None, auth=None
 ):
+    """Create a MigrationEngine."""
 
     client = mongoengine.connection.connect(
         name=database,
@@ -31,14 +34,13 @@ def engine(
         password=password,
         authentication_source=auth,
     )
-    import q
 
     if database is None:
         db = None
     else:
         db = client[database]
 
-    eng = vvtool.manager.Migrations(path, db)
+    eng = vvtool.manager.MigrationEngine(path, db)
     return eng
 
 

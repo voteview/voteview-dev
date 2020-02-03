@@ -144,7 +144,9 @@ disable=print-statement,
         len-as-condition,
         too-few-public-methods,
         ungrouped-imports,
-        too-many-arguments
+        too-many-arguments,
+
+        no-member, # Because pylint has no support for attrs.
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

@@ -3,18 +3,11 @@
 import functools
 import logging
 import pathlib
-import sys
 import types
-import typing as t
 
-import attr
 import click
-import q
 
 import vvtool.application
-
-
-q(sys.argv)
 
 
 PACKAGE_DIR = pathlib.Path(__file__).parent
@@ -42,7 +35,7 @@ def db_context(func):
     @click.option("--auth", "-a", help="Authentication")
     @path_option
     @click.pass_context
-    def f(ctx, database, username, password, host, port, auth, path, *a, **kw):
+    def wrapper(ctx, database, username, password, host, port, auth, path, *a, **kw):
 
         ctx.obj.db_info = db = vvtool.application.DatabaseInfo(
             name=database,
@@ -52,7 +45,7 @@ def db_context(func):
             port=port,
             auth=auth,
         )
-        print(vvtool.application.engine)
+
         ctx.obj.engine = vvtool.application.engine(
             path=path,
             database=db.name,
@@ -65,10 +58,10 @@ def db_context(func):
 
         return func(ctx, *a, **kw)
 
-    return f
+    return wrapper
 
 
-path_option = click.option(
+path_option = click.option(  # pylint: disable=invalid-name
     "--path",
     type=click.Path(exists=True, file_okay=False, writable=True, resolve_path=True),
     default=PACKAGE_DIR.joinpath("migrations/"),

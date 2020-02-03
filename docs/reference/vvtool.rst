@@ -11,10 +11,10 @@ Subpackages
 Submodules
 ----------
 
-vvtool.app module
------------------
+vvtool.application module
+-------------------------
 
-.. automodule:: vvtool.app
+.. automodule:: vvtool.application
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,6 +23,22 @@ vvtool.cli module
 -----------------
 
 .. automodule:: vvtool.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vvtool.documents module
+-----------------------
+
+.. automodule:: vvtool.documents
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+vvtool.manager module
+---------------------
+
+.. automodule:: vvtool.manager
    :members:
    :undoc-members:
    :show-inheritance:
